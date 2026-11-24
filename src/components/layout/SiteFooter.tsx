@@ -72,6 +72,14 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={SITE_CONFIG.appUrl}
+                  className="inline-flex min-h-10 items-center text-sm leading-5 font-semibold text-[#FDC616] transition hover:underline"
+                >
+                  Entrar na plataforma (app.euverso.com)
+                </a>
+              </li>
             </ul>
           </div>
         </div>

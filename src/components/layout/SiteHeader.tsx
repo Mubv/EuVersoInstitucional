@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { LogIn, Menu, X } from "lucide-react";
 import { MAIN_NAV_LINKS, SITE_CONFIG } from "@/config/site";
 import { WhatsAppButton } from "@/components/conversion/WhatsAppButton";
 
@@ -31,14 +31,14 @@ export function SiteHeader() {
           </picture>
         </Link>
 
-        <nav aria-label="Navegação principal" className="hidden items-center gap-2 lg:flex">
+        <nav aria-label="Navegação principal" className="hidden items-center gap-1 xl:gap-2 lg:flex">
           {MAIN_NAV_LINKS.map((item) => {
             const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`inline-flex min-h-11 items-center rounded-xl px-4 text-sm leading-5 font-semibold transition ${
+                className={`inline-flex min-h-11 items-center whitespace-nowrap rounded-xl px-3 xl:px-4 text-sm leading-5 font-semibold transition ${
                   active
                     ? "border-2 border-[#080808] bg-[#FDC616] text-[#080808]"
                     : "border-2 border-transparent text-[#080808] hover:border-[#080808] hover:bg-[#FFFFFF]"
@@ -50,12 +50,19 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden shrink-0 items-center gap-3 xl:gap-4 lg:flex">
+          <a
+            href={SITE_CONFIG.appUrl}
+            className="comic-btn-secondary whitespace-nowrap px-4 text-sm"
+          >
+            <LogIn className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span>Entrar</span>
+          </a>
           <WhatsAppButton
             origin="header"
             label="Conhecer pelo WhatsApp"
             variant="dark"
-            className="text-sm"
+            className="whitespace-nowrap px-4 text-sm xl:px-6"
           />
         </div>
 
@@ -95,7 +102,15 @@ export function SiteHeader() {
               );
             })}
           </nav>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col gap-4">
+            <a
+              href={SITE_CONFIG.appUrl}
+              onClick={() => setMobileOpen(false)}
+              className="comic-btn-secondary w-full"
+            >
+              <LogIn className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span>Entrar no app</span>
+            </a>
             <WhatsAppButton
               origin="header"
               label="Conhecer pelo WhatsApp"

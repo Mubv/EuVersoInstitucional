@@ -28,6 +28,7 @@ export const SITE_CONFIG = {
   tagline: "Uma inteligência para organizar seus mundos e fazer acontecer.",
   legalName: "EuVerso Tecnologia",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://euverso.com").replace(/\/$/, ""),
+  appUrl: (process.env.NEXT_PUBLIC_APP_URL || "https://app.euverso.com").replace(/\/$/, ""),
   locale: "pt_BR",
   language: "pt-BR",
   themeColor: "#FDC616",
