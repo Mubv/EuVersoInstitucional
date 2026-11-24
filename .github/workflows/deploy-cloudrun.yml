@@ -1,0 +1,134 @@
+name: CI & Deploy EuVerso Institucional (Cloud Run)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: euverso-institucional-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SERVICE_NAME: euverso-site
+  ARTIFACT_REPO: euverso-containers
+
+jobs:
+  verify:
+    name: Typecheck & Next.js SSG Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run TypeScript typecheck
+        run: npm run typecheck
+
+      - name: Build production SSG/SSR bundle
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://euverso.com' }}
+          NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ secrets.NEXT_PUBLIC_WHATSAPP_NUMBER }}
+          NEXT_OUTPUT_STANDALONE: "true"
+        run: npm run build
+
+  deploy-cloudrun:
+    name: Build Container & Deploy Cloud Run
+    runs-on: ubuntu-latest
+    needs: [verify]
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Check GCP secrets availability
+        id: check_secrets
+        env:
+          HAS_SA_KEY: ${{ secrets.GCP_SA_KEY != '' }}
+          HAS_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID != '' }}
+        run: |
+          if [ "$HAS_SA_KEY" = "true" ] && [ "$HAS_PROJECT_ID" = "true" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "### Deploy Cloud Run aguardando configuracao de Secrets"
+              echo ""
+              echo "O build e o typecheck passaram com sucesso, mas os secrets obrigatorios de deploy ainda nao foram cadastrados neste repositorio:"
+              echo "- \`GCP_PROJECT_ID\`"
+              echo "- \`GCP_REGION\` (padrao: \`southamerica-east1\`)"
+              echo "- \`GCP_SA_KEY\`"
+              echo "- \`NEXT_PUBLIC_WHATSAPP_NUMBER\` (opcional antes da publicacao oficial)"
+              echo ""
+              echo "Apos cadastrar em **Settings -> Secrets and variables -> Actions**, rode este workflow novamente ou faca um novo push na \`main\`."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Checkout repository
+        if: steps.check_secrets.outputs.ready == 'true'
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        if: steps.check_secrets.outputs.ready == 'true'
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        if: steps.check_secrets.outputs.ready == 'true'
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Sanitize GCP variables
+        if: steps.check_secrets.outputs.ready == 'true'
+        env:
+          RAW_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          RAW_REGION: ${{ secrets.GCP_REGION }}
+        run: |
+          echo "CLEAN_PROJECT_ID=$(echo "$RAW_PROJECT_ID" | tr -d '\r\n' | xargs)" >> "$GITHUB_ENV"
+          REGION_VAL=$(echo "${RAW_REGION:-southamerica-east1}" | tr -d '\r\n' | xargs)
+          echo "CLEAN_REGION=${REGION_VAL:-southamerica-east1}" >> "$GITHUB_ENV"
+
+      - name: Configure Docker for Artifact Registry
+        if: steps.check_secrets.outputs.ready == 'true'
+        run: gcloud auth configure-docker "$CLEAN_REGION-docker.pkg.dev" --quiet
+
+      - name: Build and push Docker image
+        if: steps.check_secrets.outputs.ready == 'true'
+        env:
+          IMAGE_SHA: ${{ env.CLEAN_REGION }}-docker.pkg.dev/${{ env.CLEAN_PROJECT_ID }}/${{ env.ARTIFACT_REPO }}/${{ env.SERVICE_NAME }}:${{ github.sha }}
+          IMAGE_LATEST: ${{ env.CLEAN_REGION }}-docker.pkg.dev/${{ env.CLEAN_PROJECT_ID }}/${{ env.ARTIFACT_REPO }}/${{ env.SERVICE_NAME }}:latest
+        run: |
+          docker build \
+            --build-arg NEXT_PUBLIC_SITE_URL="${{ vars.NEXT_PUBLIC_SITE_URL || 'https://euverso.com' }}" \
+            --build-arg NEXT_PUBLIC_WHATSAPP_NUMBER="${{ secrets.NEXT_PUBLIC_WHATSAPP_NUMBER }}" \
+            -t "$IMAGE_SHA" \
+            -t "$IMAGE_LATEST" .
+          docker push "$IMAGE_SHA"
+          docker push "$IMAGE_LATEST"
+
+      - name: Deploy to Cloud Run
+        if: steps.check_secrets.outputs.ready == 'true'
+        run: |
+          gcloud run deploy "$SERVICE_NAME" \
+            --image="$CLEAN_REGION-docker.pkg.dev/$CLEAN_PROJECT_ID/$ARTIFACT_REPO/$SERVICE_NAME:${{ github.sha }}" \
+            --region="$CLEAN_REGION" \
+            --project="$CLEAN_PROJECT_ID" \
+            --platform=managed \
+            --port=8080 \
+            --cpu=1 \
+            --memory=512Mi \
+            --min-instances=0 \
+            --max-instances=5 \
+            --allow-unauthenticated

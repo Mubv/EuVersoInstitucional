@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ev-yellow: #FDC616;
+  --color-ev-yellow-deep: #E5AE00;
+  --color-ev-black: #080808;
+  --color-ev-ink: #141414;
+  --color-ev-white: #FFFFFF;
+  --color-ev-cream: #FFF9EC;
+  --color-ev-cream-deep: #F7ECCD;
+  --color-ev-purple: #7654E8;
+  --color-ev-mint: #5BD8B6;
+  --color-ev-coral: #FF8169;
+
+  --font-display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --ev-yellow: #FDC616;
+  --ev-black: #080808;
+  --ev-white: #FFFFFF;
+  --ev-cream: #FFF9EC;
+  --ev-purple: #7654E8;
+  --ev-mint: #5BD8B6;
+  --ev-coral: #FF8169;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--ev-cream);
+  color: var(--ev-black);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ev-cream);
+  color: var(--ev-black);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografia de impacto Comic Tech */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Texturas sutis de meio-tom (halftone) sem comprometer contraste WCAG AA */
+.bg-halftone-cream {
+  background-color: #FFF9EC;
+  background-image: radial-gradient(rgba(8, 8, 8, 0.08) 1.25px, transparent 1.25px);
+  background-size: 20px 20px;
+}
+
+.bg-halftone-dark {
+  background-color: #080808;
+  background-image: radial-gradient(rgba(253, 198, 22, 0.14) 1.25px, transparent 1.25px);
+  background-size: 22px 22px;
+}
+
+.bg-halftone-yellow {
+  background-color: #FDC616;
+  background-image: radial-gradient(rgba(8, 8, 8, 0.11) 1.3px, transparent 1.3px);
+  background-size: 18px 18px;
+}
+
+.bg-grid-editorial {
+  background-image:
+    linear-gradient(to right, rgba(8, 8, 8, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 8, 8, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Painéis e cards Comic Tech */
+.comic-panel {
+  background-color: #FFFFFF;
+  border: 2px solid #080808;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 #080808;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.comic-panel-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #080808;
+}
+
+.comic-panel-lg {
+  background-color: #FFFFFF;
+  border: 3px solid #080808;
+  border-radius: 24px;
+  box-shadow: 8px 8px 0 #080808;
+}
+
+.comic-panel-dark {
+  background-color: #141414;
+  border: 2px solid #FDC616;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 #FDC616;
+  color: #FFFFFF;
+}
+
+.comic-panel-dark-muted {
+  background-color: #141414;
+  border: 2px solid #333333;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 #000000;
+  color: #FFFFFF;
+}
+
+/* Botões táteis Comic Tech (altura mínima 48px, alvo acessível, contraste >= 13:1) */
+.comic-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid #080808;
+  background-color: #FDC616;
+  color: #080808;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #080808;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  cursor: pointer;
+}
+
+.comic-btn-primary:hover {
+  background-color: #F4BA00;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #080808;
+}
+
+.comic-btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #080808;
+}
+
+.comic-btn-primary-on-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid #FFFFFF;
+  background-color: #FDC616;
+  color: #080808;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #FFFFFF;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  cursor: pointer;
+}
+
+.comic-btn-primary-on-dark:hover {
+  background-color: #FFE066;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #FFFFFF;
+}
+
+.comic-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid #080808;
+  background-color: #FFFFFF;
+  color: #080808;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #080808;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  cursor: pointer;
+}
+
+.comic-btn-secondary:hover {
+  background-color: #FFF9EC;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #080808;
+}
+
+.comic-btn-secondary-on-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid #FFFFFF;
+  background-color: #141414;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #FDC616;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  cursor: pointer;
+}
+
+.comic-btn-secondary-on-dark:hover {
+  background-color: #202020;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #FDC616;
+}
+
+.comic-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid #080808;
+  background-color: #080808;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #FDC616;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  cursor: pointer;
+}
+
+.comic-btn-dark:hover {
+  background-color: #1E1E1E;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #FDC616;
+}
+
+/* Destaque editorial estilo marca-texto sólido (sem gradiente em texto) */
+.comic-highlight {
+  background-color: #FDC616;
+  color: #080808;
+  padding: 0 8px;
+  border-radius: 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Microanimação suave para presença orbital */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 5.5s ease-in-out infinite;
+}
+
+/* Acessibilidade: foco visível forte e respeito a prefers-reduced-motion */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #7654E8;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
