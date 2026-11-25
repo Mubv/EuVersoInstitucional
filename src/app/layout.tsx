@@ -22,11 +22,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    default: "EuVerso — Uma inteligência para organizar seus mundos e fazer acontecer",
+    default: "EuVerso — Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar.",
     template: "%s | EuVerso",
   },
   description:
-    "Organize seus espaços, converse com o Pulse e transforme ideias, tarefas e processos em ações acompanháveis com inteligência artificial contextual.",
+    "O EuVerso é uma plataforma de IA que conecta seus mundos, organiza suas informações e transforma pedidos em ações, com especialistas inteligentes trabalhando por você.",
   applicationName: SITE_CONFIG.name,
   alternates: {
     canonical: SITE_CONFIG.url,
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     locale: SITE_CONFIG.locale,
     siteName: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
-    title: "EuVerso — Uma inteligência para organizar seus mundos e fazer acontecer",
+    title: "EuVerso — Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar.",
     description:
-      "Plataforma de inteligência artificial contextual, workspaces isolados, agentes supervisionados e automações acompanháveis.",
+      "O orquestrador de trabalho com IA da sua rotina, do seu time e do seu negócio. Workspaces isolados, Pulse, especialistas e controle humano.",
     images: [
       {
         url: `${SITE_CONFIG.url}${SITE_CONFIG.illustrations.hero.png}`,

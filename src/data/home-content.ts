@@ -605,45 +605,54 @@ export const SECURITY_PILLARS = [
   },
 ];
 
+export const AI_PROVIDERS_SUPPORTED = [
+  {
+    name: "OpenAI",
+    detail: "API oficial com roteamento por capacidade e controle de limites por workspace.",
+  },
+  {
+    name: "Google Gemini",
+    detail: "API oficial autenticada por cabeçalho seguro no cofre criptografado do workspace.",
+  },
+  {
+    name: "Google Vertex AI",
+    detail: "Service Account, projeto e localização dedicados por workspace — sem compartilhar credenciais.",
+  },
+  {
+    name: "Anthropic Claude",
+    detail: "API oficial integrada ao gateway unificado com medição transparente e zero retry faturável.",
+  },
+] as const;
+
 export const HOME_FAQ_ITEMS = [
   {
-    question: "O EuVerso é apenas mais um chatbot de IA?",
+    question: "O que é o EuVerso?",
     answer:
-      "Não. Um chatbot comum apenas responde perguntas soltas. O EuVerso combina workspaces isolados, o Pulse com contexto autorizado, agentes especializados, organização de projetos/tarefas/finanças e automações supervisionadas com acompanhamento.",
+      "O EuVerso é uma plataforma de inteligência artificial que conecta seus contextos pessoais, profissionais, projetos e equipes em workspaces isolados. Em vez de um chat genérico, você conversa com o Pulse, que aciona especialistas e fluxos supervisionados para transformar pedidos em ações acompanháveis.",
   },
   {
-    question: "Como o EuVerso evita que minha IA misture vida pessoal e empresa?",
+    question: "Como funciona com WhatsApp?",
     answer:
-      "Por meio de Workspaces isolados no servidor. Cada espaço tem suas próprias tarefas, finanças, memória e permissões. Quando você quiser cruzar informações entre dois espaços autorizados, isso acontece de forma explícita e auditada.",
+      "O WhatsApp é nosso canal comercial principal para tirar dúvidas e conhecer a plataforma. Dentro do produto, a integração usa exclusivamente a API oficial da Meta (quando habilitada no ambiente), com vínculo seguro por código OTP de uso único e continuidade com a conversa do Pulse na Web.",
   },
   {
-    question: "Os agentes executam ações sozinhos sem minha permissão?",
+    question: "Quais integrações estão disponíveis?",
     answer:
-      "Não. Ações de escrita por agentes exigem aprovação humana explícita vinculada aos argumentos exatos daquela ação. Além disso, o EuVerso não realiza movimentações bancárias reais nem pagamentos automáticos.",
+      "Hoje estão ativos os provedores oficiais de IA (OpenAI, Google Gemini, Google Vertex AI e Anthropic Claude via BYOK), gestão de projetos/tarefas, consulta e registro financeiro supervisionado (sem pagamentos bancários), Skills (SKILL.md) e conectores MCP em ambiente isolado sob allowlist. Conectores de e-mail, agenda e provedores externos de mídia, esportes e wearables estão em desenvolvimento (etapa S7) ou no roadmap planejado.",
   },
   {
-    question: "O Workflow Studio e o Mission Control já estão disponíveis?",
+    question: "O que é BYOK e quem paga a IA?",
     answer:
-      "Eles fazem parte da plataforma de workflows (etapa S6), já implementada e atualmente em fase de validação controlada antes da liberação geral. Por transparência, sinalizamos o status real de cada recurso em todo o site.",
+      "BYOK (Bring Your Own Key) significa trazer sua própria chave de API oficial dos provedores suportados, guardada em cofre criptografado por workspace (Cloud KMS). Quando você opera com BYOK, o consumo de tokens e eventuais recursos adicionais é cobrado diretamente pelo seu provedor conforme o modelo e a conta utilizados. Nem toda chave habilita todas as ferramentas, e o EuVerso não realiza retries automáticos em chamadas faturáveis.",
   },
   {
-    question: "O DevAgent já pode ser contratado hoje?",
+    question: "Como funcionam permissões e aprovações?",
     answer:
-      "Não. O DevAgent e os agentes voltados à automação de Pull Requests (etapa S7) são itens de roadmap futuro e não são prometidos como recursos disponíveis no momento.",
+      "Cada workspace isola dados, memória e credenciais no servidor com papéis claros (Owner, Admin, Member e Viewer). Toda ação de escrita sensível por agentes exige aprovação humana explícita de uso único vinculada aos parâmetros exatos da operação. Além disso, o EuVerso não realiza movimentações bancárias reais nem pagamentos automáticos.",
   },
   {
-    question: "Como funciona a integração com o WhatsApp?",
+    question: "O que já está disponível e o que está em evolução?",
     answer:
-      "O WhatsApp é nosso canal comercial principal e, dentro do produto (quando habilitado), funciona exclusivamente via API oficial da Meta com vínculo seguro por código OTP de uso único, conectado à mesma conversa do Pulse na Web.",
-  },
-  {
-    question: "Posso usar minha própria chave de IA (BYOK)?",
-    answer:
-      "Sim. O EuVerso suporta APIs oficiais da OpenAI, Google Gemini, Google Vertex AI e Anthropic Claude em cofre criptografado isolado por workspace, sem retries automáticos em chamadas faturáveis.",
-  },
-  {
-    question: "Por que os planos ainda mostram 'R$ XXX'?",
-    answer:
-      "Os quatro planos (Essencial, Pro, Business e Enterprise) representam nossa arquitetura comercial em aprovação final. Converse pelo WhatsApp para entender qual formato faz sentido para sua rotina ou empresa e receber as condições atualizadas.",
+      "Já estão homologados em produção: Workspaces isolados e RBAC, Pulse com memória em 3 níveis, FinanceAgent somente leitura, operadores supervisionados de projetos e finanças, cofre BYOK e Skills/MCP isolados. A plataforma de workflows (Workflow Studio e Mission Control — etapa S6) está certificada em piloto controlado. Os 10 especialistas pragmáticos ampliados, o Meu Dia declarativo e a busca web governada estão em desenvolvimento na etapa S7 e serão liberados apenas após homologação.",
   },
 ];

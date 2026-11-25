@@ -12,6 +12,7 @@ import {
 import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 import {
   ACTIVE_CAPABILITIES_SHOWCASE,
+  AI_PROVIDERS_SUPPORTED,
   HOME_FAQ_ITEMS,
   PAIN_PILLARS,
   SECURITY_PILLARS,
@@ -19,6 +20,7 @@ import {
   SPECIALIST_DOMAINS_CATALOG,
   WORKSPACES_WORLDS,
 } from "@/data/home-content";
+import { SITE_CONFIG } from "@/config/site";
 import { ResponsiveIllustration } from "@/components/ui/ResponsiveIllustration";
 import { StatusDot } from "@/components/ui/StatusDot";
 import { WhatsAppButton } from "@/components/conversion/WhatsAppButton";
@@ -29,19 +31,19 @@ import { MissionControlShowcase } from "@/components/home/MissionControlShowcase
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 
 export const metadata = buildPageMetadata({
-  title: "EuVerso — Uma inteligência para organizar seus mundos e fazer acontecer",
+  title: "EuVerso — Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar.",
   description:
-    "Organize seus espaços, converse com o Pulse e transforme ideias, tarefas e processos em ações acompanháveis com inteligência artificial contextual.",
+    "O EuVerso é uma plataforma de IA que conecta seus mundos, organiza suas informações e transforma pedidos em ações, com especialistas inteligentes trabalhando por você.",
   path: "/",
   keywords: [
+    "orquestrador de trabalho com IA",
     "assistente pessoal com IA",
     "IA para produtividade",
     "agentes de IA para empresas",
     "automação de processos com IA",
-    "plataforma de automação com IA",
+    "plataforma de IA com workspaces",
     "IA para pequenas empresas",
-    "software para organizar tarefas com IA",
-    "criação de workflows com IA",
+    "delegar trabalho com IA",
   ],
 });
 
@@ -416,30 +418,49 @@ export default function HomePage() {
       <MissionControlShowcase />
 
       {/* =====================================================================
-          10 — SEGURANÇA E CONTROLE (SERÁ REFINADA EM W4)
+          10 — IA FLEXÍVEL / INTEGRAÇÕES / SEGURANÇA
       ====================================================================== */}
       <section id="seguranca" className="bg-[#080808] border-y-4 border-[#FDC616] py-20 text-[#FFFFFF] lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#FDC616] uppercase">
-                12 · SEGURANÇA E CONTROLE
+                10 · IA FLEXÍVEL, INTEGRAÇÕES E SEGURANÇA
               </p>
               <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#FFFFFF] sm:text-4xl sm:leading-[44px]">
-                Inteligente para executar. Seguro para você decidir.
+                Sua rotina não precisa depender de uma única IA.
               </h2>
               <p className="mt-4 text-base leading-7 text-[#E4E4E7]">
-                Construído desde a base para isolar workspaces, proteger suas chaves BYOK e garantir que decisões sensíveis passem sempre pela aprovação humana.
+                Escolha provedores oficiais em cofre BYOK isolado por workspace, defina políticas de acesso e limites de consumo e mantenha aprovação humana antes de qualquer ação sensível.
               </p>
             </div>
             <WhatsAppButton
               origin="seguranca"
-              label="Tirar dúvidas de segurança"
+              label="Tirar dúvidas de segurança e BYOK"
               variant="secondary-on-dark"
             />
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* 4 Provedores Oficiais BYOK */}
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {AI_PROVIDERS_SUPPORTED.map((provider) => (
+              <article
+                key={provider.name}
+                className="rounded-2xl border-2 border-[#FDC616] bg-[#141414] p-5"
+              >
+                <p className="font-mono text-xs font-semibold tracking-wider text-[#FDC616] uppercase">
+                  API OFICIAL · BYOK
+                </p>
+                <h3 className="font-display mt-2 text-lg leading-6 font-semibold text-[#FFFFFF]">
+                  {provider.name}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#D4D4D8]">{provider.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          {/* Pilares de Segurança & Governança */}
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {SECURITY_PILLARS.map((pillar, idx) => (
               <article key={pillar.title} className="comic-panel-dark-muted p-6">
                 <div className="flex items-center gap-3">
@@ -458,53 +479,72 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* =====================================================================
-          11 — FAQ (SERÁ FUNDIDA COM CTA FINAL EM W4)
-      ====================================================================== */}
-      <section id="faq" className="bg-[#FFF9EC] border-t-2 border-[#080808] py-20 lg:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-              14 · PERGUNTAS FREQUENTES
+          {/* Transparência obrigatória de BYOK, custos e busca web */}
+          <div className="mt-8 rounded-2xl border-2 border-[#333333] bg-[#141414] p-6">
+            <p className="font-mono text-xs font-semibold tracking-wider text-[#FDC616] uppercase">
+              TRANSPARÊNCIA DE CUSTOS, FERRAMENTAS E COMPATIBILIDADE
             </p>
-            <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-              Respostas diretas, sem letra miúda.
-            </h2>
-          </div>
-
-          <div className="mt-10">
-            <FaqAccordion items={HOME_FAQ_ITEMS} />
+            <p className="mt-2 text-sm leading-6 text-[#E4E4E7]">
+              No modo <strong className="text-[#FFFFFF]">BYOK</strong>, o uso de modelos é cobrado diretamente pelo provedor da sua conta. Nem toda chave ou modelo habilita as mesmas ferramentas; recursos em evolução como <strong className="text-[#FFFFFF]">busca web governada</strong> (em desenvolvimento na etapa S7) dependem de compatibilidade, política do workspace e regras tarifárias de cada provedor.
+            </p>
           </div>
         </div>
       </section>
 
       {/* =====================================================================
-          15 — CTA FINAL
+          11 — CONVERSÃO / CTA / FAQ
       ====================================================================== */}
-      <section className="bg-halftone-yellow border-t-4 border-[#080808] py-20 lg:py-24">
-        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="comic-panel-lg bg-[#FFFFFF] px-6 py-12 sm:px-12 sm:py-16">
+      <section id="conversao" className="bg-halftone-yellow border-t-4 border-[#080808] py-20 lg:py-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          {/* Bloco de Conversão */}
+          <div className="comic-panel-lg bg-[#FFFFFF] px-6 py-12 text-center sm:px-12 sm:py-16">
             <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-              EUVERSO · COMECE UMA CONVERSA REAL
+              11 · COMECE PELO QUE IMPORTA
             </p>
             <h2 className="font-display mx-auto mt-4 max-w-3xl text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-5xl sm:leading-[56px]">
-              Chega de só organizar o que precisa ser feito. Comece a fazer acontecer.
+              Menos tempo organizando tudo. Mais tempo fazendo o que importa.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#262626] sm:text-lg">
-              Fale com a equipe do EuVerso pelo WhatsApp para conhecer a plataforma na prática, tirar dúvidas sobre seus workspaces e entender qual plano combina com seu momento.
+              Comece pela sua rotina. Conecte seus contextos e amplie suas capacidades conforme sua necessidade.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <WhatsAppButton
                 origin="cta-final"
-                label="Conhecer o EuVerso pelo WhatsApp"
+                label="Conhecer o EuVerso"
                 variant="dark"
               />
-              <Link href="/funcionalidades" className="comic-btn-secondary">
-                <span>Explorar funcionalidades</span>
+              <Link href="/planos" className="comic-btn-secondary">
+                <span>Ver planos e formatos</span>
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm font-semibold text-[#080808]">
+              <Link href="/funcionalidades" className="underline underline-offset-4 hover:text-[#52525B]">
+                Ver matriz completa de funcionalidades
+              </Link>
+              <a
+                href={SITE_CONFIG.appUrl}
+                className="underline underline-offset-4 hover:text-[#52525B]"
+              >
+                Já tem acesso? Entrar no app
+              </a>
+            </div>
+          </div>
+
+          {/* Perguntas Frequentes integradas à Dobra 11 */}
+          <div id="faq" className="mt-16 scroll-mt-24">
+            <div className="text-center">
+              <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
+                PERGUNTAS FREQUENTES
+              </p>
+              <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
+                Respostas diretas, sem letra miúda.
+              </h2>
+            </div>
+
+            <div className="mt-8">
+              <FaqAccordion items={HOME_FAQ_ITEMS} />
             </div>
           </div>
         </div>

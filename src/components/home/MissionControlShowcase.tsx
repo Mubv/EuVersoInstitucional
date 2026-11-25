@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Clock, Coins, History, ShieldCheck, XCircle } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Clock, Coins, History, ShieldCheck, XCircle } from "lucide-react";
 import { StatusDot } from "@/components/ui/StatusDot";
 import { WhatsAppButton } from "@/components/conversion/WhatsAppButton";
 import { trackEvent } from "@/config/analytics";
@@ -17,47 +18,51 @@ export function MissionControlShowcase() {
           <div className="lg:col-span-5">
             <div className="flex flex-wrap items-center gap-4">
               <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-                09 · MISSION CONTROL
+                09 · MISSION CONTROL &amp; GOVERNANÇA
               </p>
-              <StatusDot status="em_validacao" />
+              <StatusDot status="disponivel" showShort />
             </div>
             <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-              Veja o trabalho acontecendo — sem perder o comando.
+              Delegar não é perder o controle.
             </h2>
             <p className="mt-4 text-base leading-7 text-[#262626]">
-              Cada execução acompanhável aparece com status claro, etapas concluídas, aprovações pendentes, histórico auditável e visibilidade de consumo de IA.
+              Acompanhe tarefas e automações, identifique o que está em execução, o que precisa de aprovação e o que foi concluído. Plataforma S6 certificada em piloto controlado com trilha auditável por workspace.
             </p>
 
             <ul className="mt-6 space-y-4">
               <li className="flex items-start gap-3">
                 <Clock className="mt-1 h-5 w-5 shrink-0 text-[#080808]" aria-hidden="true" />
                 <span className="text-sm leading-6 text-[#262626]">
-                  <strong className="font-semibold text-[#080808]">Linha do tempo viva:</strong>{" "}
-                  saiba exatamente qual etapa rodou e onde a missão está pausada.
+                  <strong className="font-semibold text-[#080808]">Linha do tempo clara:</strong>{" "}
+                  visualize em tempo real cada etapa concluída e onde a execução aguarda sua decisão.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-[#080808]" aria-hidden="true" />
                 <span className="text-sm leading-6 text-[#262626]">
                   <strong className="font-semibold text-[#080808]">Aprovações unificadas:</strong>{" "}
-                  decida na Web ou pelo WhatsApp com validação única dos argumentos.
+                  aprove ou recuse ações sensíveis com validação de uso único vinculada aos parâmetros exatos.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Coins className="mt-1 h-5 w-5 shrink-0 text-[#080808]" aria-hidden="true" />
                 <span className="text-sm leading-6 text-[#262626]">
-                  <strong className="font-semibold text-[#080808]">FinOps transparente:</strong>{" "}
-                  acompanhe estado de medição sem retries automáticos faturáveis.
+                  <strong className="font-semibold text-[#080808]">Consumo transparente:</strong>{" "}
+                  histórico auditável de uso e limites por workspace sem retries automáticos faturáveis.
                 </span>
               </li>
             </ul>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <WhatsAppButton
                 origin="mission-control"
                 label="Conhecer o Mission Control"
                 variant="primary"
               />
+              <Link href="/workflow-studio" className="comic-btn-secondary text-sm">
+                <span>Ver Workflow Studio</span>
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
           </div>
 
