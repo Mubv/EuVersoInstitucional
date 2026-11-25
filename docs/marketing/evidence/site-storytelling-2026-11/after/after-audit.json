@@ -1,0 +1,457 @@
+{
+  "phase": "after",
+  "capturedAt": "2026-11-25T13:59:29.142Z",
+  "baseUrl": "http://127.0.0.1:3015",
+  "desktop": {
+    "viewportName": "desktop-1440",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "audit": {
+      "innerWidth": 1440,
+      "scrollWidth": 1440,
+      "overflowX": false,
+      "scrollHeight": 12964,
+      "h1Count": 1,
+      "h1s": [
+        {
+          "text": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar.",
+          "rect": {
+            "x": 112,
+            "y": -4201,
+            "width": 588,
+            "height": 168,
+            "top": -4201,
+            "right": 700,
+            "bottom": -4033,
+            "left": 112
+          }
+        }
+      ],
+      "highlightInfo": {
+        "text": "Tudo em um só lugar.",
+        "bg": "rgb(253, 198, 22)",
+        "color": "rgb(8, 8, 8)"
+      },
+      "heroCardBg": "rgb(8, 8, 8)",
+      "hasRepositionedPuv": true,
+      "sectionCount": 11,
+      "sections": [
+        {
+          "index": 1,
+          "id": "inicio",
+          "heading": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar."
+        },
+        {
+          "index": 2,
+          "id": "problema",
+          "heading": "Sua rotina está espalhada. Seu trabalho não deveria estar."
+        },
+        {
+          "index": 3,
+          "id": "virada",
+          "heading": "De perguntar para a IA a delegar trabalho."
+        },
+        {
+          "index": 4,
+          "id": "demonstracao",
+          "heading": "Veja como uma conversa pode virar ação."
+        },
+        {
+          "index": 5,
+          "id": "pulse",
+          "heading": "Você conversa com um. Especialistas trabalham por trás."
+        },
+        {
+          "index": 6,
+          "id": "agentes",
+          "heading": "Um especialista para cada tipo de necessidade."
+        },
+        {
+          "index": 7,
+          "id": "workspaces",
+          "heading": "Sua vida tem vários contextos. O EuVerso também."
+        },
+        {
+          "index": 8,
+          "id": "meu-dia",
+          "heading": "Seu dia começa com clareza."
+        },
+        {
+          "index": 9,
+          "id": "mission-control",
+          "heading": "Delegar não é perder o controle."
+        },
+        {
+          "index": 10,
+          "id": "seguranca",
+          "heading": "Sua rotina não precisa depender de uma única IA."
+        },
+        {
+          "index": 11,
+          "id": "conversao",
+          "heading": "Menos tempo organizando tudo. Mais tempo fazendo o que importa."
+        }
+      ],
+      "brokenImages": [],
+      "totalImages": 5,
+      "missingAltImages": [],
+      "faqCount": 6,
+      "title": "EuVerso — Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar.",
+      "metaDescription": "O EuVerso é uma plataforma de IA que conecta seus mundos, organiza suas informações e transforma pedidos em ações, com especialistas inteligentes trabalhando por você."
+    },
+    "interactions": {
+      "techLayerOpened": true,
+      "heroPrimaryCta": {
+        "text": "Conhecer o EuVerso",
+        "mode": "preview_modal",
+        "modalVisible": true
+      },
+      "heroSecondaryCta": {
+        "href": "#demonstracao",
+        "clicked": true
+      },
+      "demo": {
+        "demoTabCount": 4,
+        "demoTabsSelected": 4,
+        "keyboardArrowRightWorked": true,
+        "demoSimToggled": true
+      },
+      "missionControlApproved": true,
+      "faqToggle": {
+        "beforeExp": "true",
+        "afterExp": "false",
+        "changed": true
+      },
+      "reducedMotionScrollBehavior": "auto"
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "mobile": {
+    "viewportName": "mobile-390",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "audit": {
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": false,
+      "scrollHeight": 25555,
+      "h1Count": 1,
+      "h1s": [
+        {
+          "text": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar.",
+          "rect": {
+            "x": 16,
+            "y": -8393,
+            "width": 358,
+            "height": 176,
+            "top": -8393,
+            "right": 374,
+            "bottom": -8217,
+            "left": 16
+          }
+        }
+      ],
+      "highlightInfo": {
+        "text": "Tudo em um só lugar.",
+        "bg": "rgb(253, 198, 22)",
+        "color": "rgb(8, 8, 8)"
+      },
+      "heroCardBg": "rgb(8, 8, 8)",
+      "hasRepositionedPuv": true,
+      "sectionCount": 11,
+      "sections": [
+        {
+          "index": 1,
+          "id": "inicio",
+          "heading": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar."
+        },
+        {
+          "index": 2,
+          "id": "problema",
+          "heading": "Sua rotina está espalhada. Seu trabalho não deveria estar."
+        },
+        {
+          "index": 3,
+          "id": "virada",
+          "heading": "De perguntar para a IA a delegar trabalho."
+        },
+        {
+          "index": 4,
+          "id": "demonstracao",
+          "heading": "Veja como uma conversa pode virar ação."
+        },
+        {
+          "index": 5,
+          "id": "pulse",
+          "heading": "Você conversa com um. Especialistas trabalham por trás."
+        },
+        {
+          "index": 6,
+          "id": "agentes",
+          "heading": "Um especialista para cada tipo de necessidade."
+        },
+        {
+          "index": 7,
+          "id": "workspaces",
+          "heading": "Sua vida tem vários contextos. O EuVerso também."
+        },
+        {
+          "index": 8,
+          "id": "meu-dia",
+          "heading": "Seu dia começa com clareza."
+        },
+        {
+          "index": 9,
+          "id": "mission-control",
+          "heading": "Delegar não é perder o controle."
+        },
+        {
+          "index": 10,
+          "id": "seguranca",
+          "heading": "Sua rotina não precisa depender de uma única IA."
+        },
+        {
+          "index": 11,
+          "id": "conversao",
+          "heading": "Menos tempo organizando tudo. Mais tempo fazendo o que importa."
+        }
+      ],
+      "brokenImages": [],
+      "totalImages": 5,
+      "missingAltImages": [],
+      "faqCount": 6,
+      "title": "EuVerso — Sua vida. Seu trabalho. Seus projetos. Tudo em um só lugar.",
+      "metaDescription": "O EuVerso é uma plataforma de IA que conecta seus mundos, organiza suas informações e transforma pedidos em ações, com especialistas inteligentes trabalhando por você."
+    },
+    "interactions": {
+      "techLayerOpened": true,
+      "heroPrimaryCta": {
+        "text": "Conhecer o EuVerso",
+        "mode": "preview_modal",
+        "modalVisible": true
+      },
+      "heroSecondaryCta": {
+        "href": "#demonstracao",
+        "clicked": true
+      },
+      "demo": {
+        "demoTabCount": 4,
+        "demoTabsSelected": 4,
+        "keyboardArrowRightWorked": true,
+        "demoSimToggled": true
+      },
+      "missionControlApproved": true,
+      "faqToggle": {
+        "beforeExp": "true",
+        "afterExp": "false",
+        "changed": true
+      },
+      "reducedMotionScrollBehavior": "auto"
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "routes": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/funcionalidades",
+      "status": 200
+    },
+    {
+      "route": "/pulse",
+      "status": 200
+    },
+    {
+      "route": "/workspaces",
+      "status": 200
+    },
+    {
+      "route": "/agentes-de-ia",
+      "status": 200
+    },
+    {
+      "route": "/automacoes-com-ia",
+      "status": 200
+    },
+    {
+      "route": "/workflow-studio",
+      "status": 200
+    },
+    {
+      "route": "/ia-para-produtividade",
+      "status": 200
+    },
+    {
+      "route": "/ia-para-empresas",
+      "status": 200
+    },
+    {
+      "route": "/planos",
+      "status": 200
+    },
+    {
+      "route": "/contato",
+      "status": 200
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200
+    }
+  ],
+  "manifest": [
+    {
+      "file": "after-desktop-1440-01-hero-above-fold.png",
+      "bytes": 391194,
+      "sha256": "1813bd3fa7dd0b375ee48bbb80b0b831abced9aae919b99677e259e13a8ce5ee"
+    },
+    {
+      "file": "after-desktop-1440-full.png",
+      "bytes": 1813292,
+      "sha256": "3c1265004dea2569b8356587ee5c53dfb18047999a6e861a6cb3b55269e7fa04"
+    },
+    {
+      "file": "after-desktop-1440-dobra-01-inicio.png",
+      "bytes": 354417,
+      "sha256": "0bdfd6f3d96c102ecb805fea9986606c341097c189b151bed530bab66dbc68ea"
+    },
+    {
+      "file": "after-desktop-1440-dobra-02-problema.png",
+      "bytes": 53047,
+      "sha256": "7525716dbe2e4992a3926181ba6b1d2a5a589fc65516bac728d9686d08b08f47"
+    },
+    {
+      "file": "after-desktop-1440-dobra-03-virada.png",
+      "bytes": 106377,
+      "sha256": "9566356495d9e2953608a12e8fb24fe5b9bd901734ed88169e1e07bcd90b8433"
+    },
+    {
+      "file": "after-desktop-1440-dobra-04-demonstracao.png",
+      "bytes": 153866,
+      "sha256": "993f811f596e3d26b4bde0b725d32c44b0d1e1f54e2994448edbba8c57b02b0d"
+    },
+    {
+      "file": "after-desktop-1440-dobra-05-pulse.png",
+      "bytes": 375217,
+      "sha256": "508b36661ee79f3563e9ffbda33276eabe0d4492555cdfe88d949e828f0c938b"
+    },
+    {
+      "file": "after-desktop-1440-dobra-06-agentes.png",
+      "bytes": 173376,
+      "sha256": "23a7cdcc3c441a32b61766b744dd7a53bcf8df44800fcbc4c3f5425ea67cda34"
+    },
+    {
+      "file": "after-desktop-1440-dobra-07-workspaces.png",
+      "bytes": 119931,
+      "sha256": "74a260d5a96daba3cb4836c25051c8d0f393df0e84bd7484a0765e216f631376"
+    },
+    {
+      "file": "after-desktop-1440-dobra-08-meu-dia.png",
+      "bytes": 125454,
+      "sha256": "7c56a50994f7e262b4d633d0f1353d438630733e236c23de927b38766c597c54"
+    },
+    {
+      "file": "after-desktop-1440-dobra-09-mission-control.png",
+      "bytes": 112203,
+      "sha256": "50cd2bfd66a65f48c064ba5a5bf7c075c26369825be9448853cdc0a461aa92f8"
+    },
+    {
+      "file": "after-desktop-1440-dobra-10-seguranca.png",
+      "bytes": 156516,
+      "sha256": "52f8ff480e4b9840b609509672a791dd7e86aa104a11e56f83a67aaeac474e35"
+    },
+    {
+      "file": "after-desktop-1440-dobra-11-conversao.png",
+      "bytes": 139720,
+      "sha256": "0cdb3c43eace628d2eecbce812df5b2d381d15676f5ddc6c004ca3d19b679b70"
+    },
+    {
+      "file": "after-desktop-1440-walkthrough.webm",
+      "bytes": 8340046,
+      "sha256": "67a783acaa5272ef42b6cfd1034af00113fced9dd2b4259850a9b2300b9d29ce"
+    },
+    {
+      "file": "after-mobile-390-01-hero-above-fold.png",
+      "bytes": 116382,
+      "sha256": "e58c60743ed157dd39c6acae907dd9d65f630e02bd45338065103c302729326a"
+    },
+    {
+      "file": "after-mobile-390-full.png",
+      "bytes": 1546855,
+      "sha256": "000ec5b66130b248e586264263fc075ff64d0be3ddb364e75a4e31e9dad8b19f"
+    },
+    {
+      "file": "after-mobile-390-dobra-01-inicio.png",
+      "bytes": 167427,
+      "sha256": "c1abbdf6625957a779a3eeecf61dfa36b0284ea08cc4acd44b29ac98e3f19140"
+    },
+    {
+      "file": "after-mobile-390-dobra-02-problema.png",
+      "bytes": 58647,
+      "sha256": "380145e39035caf4b6cd894240c895ac7ec784bd2e006c118af688eaabe295bb"
+    },
+    {
+      "file": "after-mobile-390-dobra-03-virada.png",
+      "bytes": 91058,
+      "sha256": "e6929d03ced3d80b8b2bb25caf10c79279e9e50d21e31dff8e9f77ea0c363f28"
+    },
+    {
+      "file": "after-mobile-390-dobra-04-demonstracao.png",
+      "bytes": 146167,
+      "sha256": "04b6d4b42e0e8f286cf464d9da8c237eae5872a569a42ecefb3c049e1e1efa2f"
+    },
+    {
+      "file": "after-mobile-390-dobra-05-pulse.png",
+      "bytes": 273265,
+      "sha256": "26a8e19caf3e5ba27f3f60aeaa39a8a0178f73abd616f3c3e72b1148aa6a0a80"
+    },
+    {
+      "file": "after-mobile-390-dobra-06-agentes.png",
+      "bytes": 191071,
+      "sha256": "d851bf2beb1df4620eba0b6dad391c52b8fd8daa5538683fd4b45029d97ac25a"
+    },
+    {
+      "file": "after-mobile-390-dobra-07-workspaces.png",
+      "bytes": 118446,
+      "sha256": "b6824d4b550491ed84c326b430be1505ce2df219c2825e80397b4a140e015ebe"
+    },
+    {
+      "file": "after-mobile-390-dobra-08-meu-dia.png",
+      "bytes": 132589,
+      "sha256": "de3363d08933ef7118253d419bd3b7cda08b40095ec9b621d4f4dc2f5519e98d"
+    },
+    {
+      "file": "after-mobile-390-dobra-09-mission-control.png",
+      "bytes": 107165,
+      "sha256": "1bbbebaf3fb3950e84e909eaa1ed5a1762257c6cf8273aa2c94d2b6208c92038"
+    },
+    {
+      "file": "after-mobile-390-dobra-10-seguranca.png",
+      "bytes": 174879,
+      "sha256": "f22059bcc2e636ae4fb2f8dad5521fdd7347cc17ddbce812ef526e5bea83fd23"
+    },
+    {
+      "file": "after-mobile-390-dobra-11-conversao.png",
+      "bytes": 113667,
+      "sha256": "eb3e2118f6e8b7726ec77e53d616e151a39ad84d41ab96cd12a098947736d805"
+    },
+    {
+      "file": "after-mobile-390-walkthrough.webm",
+      "bytes": 2446492,
+      "sha256": "dc5d4a1b2479ad498f75373aa84da9e4497bc62002f5aebdaee4e6ca0bac1df6"
+    }
+  ]
+}

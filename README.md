@@ -47,7 +47,7 @@ npm --prefix frontend/euverso-site run build
 
 ## Rotas SEO Pré-Renderizadas (SSG)
 
-- `/` — Home completa (15 seções + prova interativa na primeira dobra)
+- `/` — Home completa (11 dobras narrativas: Hero, Dor, Virada, Demonstração, Pulse, Especialistas, Workspaces, Meu Dia S7, Mission Control, IA Flexível & Segurança, Conversão/FAQ)
 - `/funcionalidades` — Matriz completa `P1/P2/P3` com filtro de disponibilidade
 - `/pulse` — IA contextual e presença orbital
 - `/workspaces` — Isolamento multi-workspace e RBAC
