@@ -11,16 +11,18 @@ import {
   MessageCircle,
   Plug,
   ShieldCheck,
+  Sparkles,
   Wallet,
+  XCircle,
 } from "lucide-react";
 import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 import {
   AGENTS_SHOWCASE,
   AUDIENCES,
   HOME_FAQ_ITEMS,
-  HOW_IT_WORKS_STEPS,
-  PROBLEM_FRAGMENTS,
+  PAIN_PILLARS,
   SECURITY_PILLARS,
+  SHIFT_COMPARISON,
   WORKSPACES_WORLDS,
 } from "@/data/home-content";
 import { ResponsiveIllustration } from "@/components/ui/ResponsiveIllustration";
@@ -114,65 +116,43 @@ export default function HomePage() {
       />
 
       {/* =====================================================================
-          01 — HERO INTERATIVA: A PUV SOB PROVA NA PRIMEIRA DOBRA
+          01 — HERO / POSICIONAMENTO (ADENDO DEFINITIVO)
       ====================================================================== */}
-      <section className="bg-halftone-cream relative overflow-hidden border-b-4 border-[#080808] pt-8 pb-16 lg:pt-12 lg:pb-24">
+      <section id="inicio" className="bg-halftone-cream relative overflow-hidden border-b-4 border-[#080808] pt-8 pb-16 lg:pt-14 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-12">
             {/* Texto PUV + CTAs */}
             <div className="lg:col-span-6">
               <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-                CONTEXTO · ORGANIZAÇÃO · AGENTES · AUTOMAÇÃO · ACOMPANHAMENTO
+                CONHEÇA O EUVERSO
               </p>
 
               <h1 className="font-display mt-4 text-4xl leading-[44px] font-semibold tracking-tight text-[#080808] sm:text-5xl sm:leading-[56px]">
                 Sua vida. Seu trabalho. Seus projetos.{" "}
-                <span className="comic-highlight">Tudo em um só universo inteligente.</span>
+                <span className="comic-highlight">Tudo em um só lugar.</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-7 text-[#1F1F23]">
-                Organize seus espaços, converse com o Pulse e transforme ideias, tarefas e processos em ações acompanháveis com inteligência artificial.
+                O EuVerso é uma plataforma de IA que conecta seus mundos, organiza suas informações e transforma pedidos em ações, com especialistas inteligentes trabalhando por você.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6">
                 <WhatsAppButton
                   origin="hero"
-                  label="Conhecer pelo WhatsApp"
+                  label="Conhecer o EuVerso"
                   variant="primary"
                   extraEvent="hero_cta_click"
                 />
-                <a href="#como-funciona" className="comic-btn-secondary">
+                <a href="#demonstracao" className="comic-btn-secondary">
                   <span>Ver como funciona</span>
                   <ArrowDown className="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
-
-              {/* Mini-síntese editorial que responde às 5 perguntas na primeira dobra */}
-              <div className="mt-8 grid gap-4 border-t-2 border-[#080808]/15 pt-6 sm:grid-cols-3">
-                <div>
-                  <p className="font-mono text-xs font-semibold text-[#52525B] uppercase">Para quem é</p>
-                  <p className="mt-1 text-sm leading-5 font-semibold text-[#080808]">
-                    Pessoas, empreendedores e equipes
-                  </p>
-                </div>
-                <div>
-                  <p className="font-mono text-xs font-semibold text-[#52525B] uppercase">Diferencial</p>
-                  <p className="mt-1 text-sm leading-5 font-semibold text-[#080808]">
-                    Não é só chat: organiza e executa sob aprovação
-                  </p>
-                </div>
-                <div>
-                  <p className="font-mono text-xs font-semibold text-[#52525B] uppercase">Controle real</p>
-                  <p className="mt-1 text-sm leading-5 font-semibold text-[#080808]">
-                    Workspaces isolados e BYOK oficial
-                  </p>
-                </div>
-              </div>
             </div>
 
-            {/* Grande Ilustração Oficial 01 — Mundos Conectados */}
+            {/* Grande Ilustração Oficial 01 — Mundos Conectados (contraste corrigido) */}
             <div className="lg:col-span-6">
-              <div className="comic-panel-lg overflow-hidden bg-[#080808] p-3">
+              <div className="comic-panel-lg-dark overflow-hidden p-3">
                 <div className="overflow-hidden rounded-2xl bg-[#080808]">
                   <ResponsiveIllustration
                     variant="hero"
@@ -184,48 +164,48 @@ export default function HomePage() {
                   <span className="font-mono font-semibold text-[#FDC616] uppercase">
                     EUVERSO · MUNDOS CONECTADOS
                   </span>
-                  <span>Pessoal · Projetos · Equipe · Automações</span>
+                  <span>Pessoal · Trabalho · Projetos · Equipe</span>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Módulo Interativo de Demonstração na Primeira Dobra */}
-          <div className="mt-12 lg:mt-16">
-            <HeroInteractiveDemo />
           </div>
         </div>
       </section>
 
       {/* =====================================================================
-          02 — O PROBLEMA
+          02 — A DOR / FRAGMENTAÇÃO
       ====================================================================== */}
       <section id="problema" className="bg-[#FFFFFF] py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-              02 · O PROBLEMA
+              02 · A DOR DA FRAGMENTAÇÃO
             </p>
             <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-              Sua rotina está em mil lugares. Sua inteligência não precisa estar.
+              Sua rotina está espalhada. Seu trabalho não deveria estar.
             </h2>
             <p className="mt-4 text-base leading-7 text-[#262626]">
-              Projetos em um aplicativo, finanças em outro, decisões perdidas em conversas e uma IA genérica que esquece tudo no dia seguinte. O resultado é retrabalho constante para reconstruir o próprio contexto.
+              E-mails de um lado. Agenda de outro. Despesas, documentos, projetos e tarefas em ferramentas diferentes. Você gasta tempo procurando contexto, repetindo informações e acompanhando o que ficou para trás.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {PROBLEM_FRAGMENTS.map((item) => (
-              <article key={item.world} className="comic-panel comic-panel-interactive p-6">
-                <div
-                  className="mb-4 h-3 w-12 rounded-full border-2 border-[#080808]"
-                  style={{ backgroundColor: item.accent }}
-                  aria-hidden="true"
-                />
-                <h3 className="font-display text-xl leading-7 font-semibold text-[#080808]">
-                  {item.world}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {PAIN_PILLARS.map((item) => (
+              <article key={item.id} className="comic-panel comic-panel-interactive p-6 sm:p-8">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-xs font-semibold tracking-wider text-[#52525B] uppercase">
+                    {item.eyebrow}
+                  </span>
+                  <div
+                    className="h-3 w-10 rounded-full border-2 border-[#080808]"
+                    style={{ backgroundColor: item.accent }}
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 className="font-display mt-4 text-xl leading-7 font-semibold text-[#080808]">
+                  {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-[#262626]">{item.pain}</p>
+                <p className="mt-3 text-sm leading-6 text-[#262626]">{item.pain}</p>
               </article>
             ))}
           </div>
@@ -233,48 +213,80 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================================
-          03 — COMO FUNCIONA
+          03 — A VIRADA / PERGUNTAR VS. DELEGAR
       ====================================================================== */}
-      <section id="como-funciona" className="bg-[#FFF9EC] border-t-2 border-[#080808] py-20 lg:py-24">
+      <section id="virada" className="bg-[#FFF9EC] border-t-2 border-[#080808] py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-              03 · COMO FUNCIONA
+              03 · A VIRADA
             </p>
             <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-              Organize &rarr; Converse &rarr; Delegue &rarr; Acompanhe.
+              De perguntar para a IA a delegar trabalho.
             </h2>
-            <p className="mt-4 text-base leading-7 text-[#262626]">
-              Quatro movimentos simples que tiram a inteligência artificial do modo &ldquo;curiosidade de chat&rdquo; e colocam seu universo em movimento real.
-            </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {HOW_IT_WORKS_STEPS.map((step) => (
-              <article key={step.number} className="comic-panel comic-panel-interactive flex flex-col justify-between p-6">
-                <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <span
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-xl border-2 border-[#080808] font-mono text-sm font-semibold"
-                      style={{
-                        backgroundColor: step.accent,
-                        color: step.accent === "#7654E8" ? "#FFFFFF" : "#080808",
-                      }}
-                    >
-                      {step.number}
-                    </span>
-                    <span className="font-mono text-xs font-semibold tracking-wider text-[#52525B] uppercase">
-                      {step.action}
-                    </span>
-                  </div>
-                  <h3 className="font-display mt-4 text-xl leading-7 font-semibold text-[#080808]">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-[#262626]">{step.description}</p>
-                </div>
-              </article>
-            ))}
+          <div className="mt-10 grid gap-6 lg:grid-cols-12">
+            {/* Comparativo: Hoje */}
+            <article className="comic-panel bg-[#F4F4F5] p-6 sm:p-8 lg:col-span-5">
+              <div className="flex items-center gap-2 text-[#080808]">
+                <XCircle className="h-5 w-5 shrink-0 text-[#B91C1C]" aria-hidden="true" />
+                <p className="font-mono text-xs font-semibold tracking-wider uppercase">
+                  {SHIFT_COMPARISON.today.eyebrow}
+                </p>
+              </div>
+              <p className="font-display mt-4 text-xl leading-7 font-semibold text-[#080808]">
+                {SHIFT_COMPARISON.today.summary}
+              </p>
+              <ul className="mt-6 space-y-3 border-t border-[#080808]/15 pt-5">
+                {SHIFT_COMPARISON.today.points.map((point) => (
+                  <li key={point} className="flex items-start gap-2.5 text-sm leading-6 text-[#262626]">
+                    <XCircle className="mt-1 h-4 w-4 shrink-0 text-[#B91C1C]" aria-hidden="true" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            {/* Comparativo: Com o EuVerso */}
+            <article className="comic-panel-lg-dark border-[#080808] p-6 shadow-[8px_8px_0_#FDC616] sm:p-8 lg:col-span-7">
+              <div className="flex items-center gap-2 text-[#FDC616]">
+                <Sparkles className="h-5 w-5 shrink-0" aria-hidden="true" />
+                <p className="font-mono text-xs font-semibold tracking-wider uppercase">
+                  {SHIFT_COMPARISON.euverso.eyebrow}
+                </p>
+              </div>
+              <p className="font-display mt-4 text-xl leading-7 font-semibold text-[#FFFFFF]">
+                {SHIFT_COMPARISON.euverso.summary}
+              </p>
+              <ul className="mt-6 space-y-3 border-t border-[#2E2E32] pt-5">
+                {SHIFT_COMPARISON.euverso.points.map((point) => (
+                  <li key={point} className="flex items-start gap-2.5 text-sm leading-6 text-[#E4E4E7]">
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#5BD8B6]" aria-hidden="true" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-xs leading-5 text-[#D4D4D8]">
+                Ações sensíveis exigem aprovação humana explícita; disponibilidade de integrações varia conforme liberação do produto.
+              </p>
+            </article>
           </div>
+
+          <div className="mt-8 rounded-2xl border-2 border-[#080808] bg-[#FDC616] px-6 py-5 shadow-[4px_4px_0_#080808]">
+            <p className="font-display text-center text-xl leading-7 font-semibold text-[#080808] sm:text-2xl sm:leading-8">
+              {SHIFT_COMPARISON.closing}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          04 — DEMONSTRAÇÃO (TRANSITÓRIO W1 -> REFINADO EM W2)
+      ====================================================================== */}
+      <section id="demonstracao" className="bg-[#FFFFFF] border-t-2 border-[#080808] py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <HeroInteractiveDemo />
         </div>
       </section>
 

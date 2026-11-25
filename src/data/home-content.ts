@@ -191,6 +191,53 @@ export const HERO_DEMO_SCENARIOS: HeroDemoScenario[] = [
   },
 ];
 
+export const PAIN_PILLARS = [
+  {
+    id: "desconectados",
+    eyebrow: "01 · DESCONEXÃO",
+    title: "Aplicativos desconectados",
+    pain: "E-mails em um app, agenda em outro, despesas em planilhas e projetos espalhados em ferramentas que nunca conversam entre si.",
+    accent: "#FDC616",
+  },
+  {
+    id: "contexto",
+    eyebrow: "02 · RETRABALHO",
+    title: "Perda de contexto",
+    pain: "Decisões importantes se perdem em chats paralelos e IAs genéricas obrigam você a reexplicar sua rotina toda semana.",
+    accent: "#FF8169",
+  },
+  {
+    id: "esforco",
+    eyebrow: "03 · SOBRECARGA",
+    title: "Esforço operacional recorrente",
+    pain: "Mesmo quando você recebe uma boa resposta da IA, ainda precisa copiar, estruturar tarefas e acompanhar cada etapa sozinho.",
+    accent: "#7654E8",
+  },
+] as const;
+
+export const SHIFT_COMPARISON = {
+  today: {
+    eyebrow: "HOJE · CHAT DE IA COMUM",
+    summary: "Você pergunta. A IA responde. E você ainda precisa executar e acompanhar o resto.",
+    points: [
+      "Cada conversa começa do zero, sem conhecer seus mundos nem suas prioridades.",
+      "Entrega texto solto que vira mais trabalho manual para copiar e organizar.",
+      "Sem trilha de execução, sem aprovações e sem continuidade no dia seguinte.",
+    ],
+  },
+  euverso: {
+    eyebrow: "COM O EUVERSO · DELEGAÇÃO COM CONTROLE",
+    summary:
+      "Você pede. O Pulse entende o contexto, aciona os especialistas certos, prepara ou executa ações autorizadas e permite acompanhar os resultados.",
+    points: [
+      "Lê somente o contexto autorizado de cada workspace, sem misturar vida pessoal e empresa.",
+      "Especialistas estruturam tarefas, análises e fluxos com aprovação humana antes de ações sensíveis.",
+      "Você acompanha cada etapa do pedido ao resultado em um só lugar.",
+    ],
+  },
+  closing: "A diferença não é apenas uma resposta. É continuidade.",
+} as const;
+
 export const PROBLEM_FRAGMENTS = [
   {
     world: "Conversas soltas",
