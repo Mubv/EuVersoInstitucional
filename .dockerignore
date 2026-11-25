@@ -6,4 +6,5 @@ out
 .env.*
 !.env.example
 README.md
+docs
 *.log

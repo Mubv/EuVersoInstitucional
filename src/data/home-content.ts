@@ -1,7 +1,9 @@
 export interface HeroDemoScenario {
-  id: "organizar-dia" | "planejar-projeto" | "criar-automacao" | "acompanhar-missao";
+  id: "financeiro" | "email" | "agenda" | "projetos-automacao";
   tabLabel: string;
   workspaceLabel: string;
+  availabilityLabel: string;
+  availabilityStatus: "disponivel" | "em_desenvolvimento" | "em_validacao";
   accentColor: string;
   userPrompt: string;
   genericAiResponse: string;
@@ -22,174 +24,268 @@ export interface HeroDemoScenario {
 
 export const HERO_DEMO_SCENARIOS: HeroDemoScenario[] = [
   {
-    id: "organizar-dia",
-    tabLabel: "Organizar meu dia",
-    workspaceLabel: "Workspace Pessoal + Trabalho",
+    id: "financeiro",
+    tabLabel: "Financeiro",
+    workspaceLabel: "Workspace Empresa · FinanceAgent + Operador Supervisionado",
+    availabilityLabel: "Disponível (sem pagamento bancário)",
+    availabilityStatus: "disponivel",
     accentColor: "#FDC616",
-    userPrompt: "Pulse, organize meu dia separando pendências da empresa e compromissos de casa.",
+    userPrompt:
+      "Pulse, leia esta despesa de consultoria de R$ 1.850, prepare o lançamento para dia 15 e mostre o impacto no mês.",
     genericAiResponse:
-      "Gera um texto genérico em lista, sem saber quais projetos existem, sem separar sua rotina pessoal da empresa e sem criar nenhuma ação acompanhável.",
+      "Responde com um cálculo aproximado em texto solto, sem enxergar suas categorias reais, sem preparar o lançamento e sem controle de vencimento.",
     steps: [
       {
-        label: "1. Pedido",
-        title: "Solicitação natural",
-        detail: "Você pede pelo painel web ou pelo WhatsApp oficial conectado.",
+        label: "1. Entender despesa",
+        title: "Leitura do pedido",
+        detail: "Identifica valor, categoria e workspace autorizado sem misturar conta pessoal e empresa.",
       },
       {
-        label: "2. Contexto",
-        title: "Leitura autorizada",
-        detail: "O Pulse consulta somente os workspaces que você autorizou, sem misturar dados.",
+        label: "2. Extrair dados",
+        title: "Consulta auditada",
+        detail: "O FinanceAgent consulta receitas, despesas e faturas em precisão decimal (somente leitura).",
       },
       {
-        label: "3. Prioridades",
-        title: "Ordem por impacto",
-        detail: "Agrupa entregas urgentes do trabalho e tarefas domésticas em blocos claros.",
+        label: "3. Preparar lançamento",
+        title: "Proposta estruturada",
+        detail: "Monta o registro organizacional com vencimento e impacto mensal para sua conferência.",
       },
       {
-        label: "4. Próximos passos",
-        title: "Ações estruturadas",
-        detail: "Sugere tarefas prontas para confirmar no seu workspace com um clique.",
+        label: "4. Aprovar e registrar",
+        title: "Decisão humana obrigatória",
+        detail: "Só registra após sua aprovação de uso único e acompanha o vencimento no workspace.",
       },
     ],
     euversoOutcome: {
-      heading: "Rotina estruturada em dois mundos separados",
-      statusLabel: "Exemplo simulado · Aguardando sua confirmação",
+      heading: "Despesa estruturada e pronta para sua aprovação",
+      statusLabel: "Demonstração ilustrativa · Aguardando aprovação humana",
       statusDot: "#15803D",
       items: [
-        "[Empresa] Revisar proposta comercial e aprovar cronograma da semana",
-        "[Empresa] Checar resumo financeiro mensal via FinanceAgent (somente leitura)",
-        "[Pessoal] Agendar consulta e organizar vencimentos do cartão no workspace Casa",
+        "Consulta: despesas do mês atualizadas via FinanceAgent (somente leitura)",
+        "Preparação: lançamento organizacional R$ 1.850,00 · vencimento dia 15",
+        "Controle: nenhuma alteração gravada antes do seu aceite · zero pagamento bancário automático",
       ],
-      humanControlNote: "Nenhuma tarefa é gravada ou alterada antes da sua confirmação.",
+      humanControlNote:
+        "O EuVerso não realiza transferências nem paga boletos automaticamente; toda gravação exige sua aprovação.",
     },
   },
   {
-    id: "planejar-projeto",
-    tabLabel: "Planejar um projeto",
-    workspaceLabel: "Workspace Projetos & Clientes",
+    id: "email",
+    tabLabel: "E-mail",
+    workspaceLabel: "Workspace Comercial · Agente de E-mail (Em desenvolvimento S7)",
+    availabilityLabel: "Em desenvolvimento (S7)",
+    availabilityStatus: "em_desenvolvimento",
     accentColor: "#FF8169",
-    userPrompt: "Quero estruturar o lançamento de um novo serviço em 4 semanas com entregas e responsáveis.",
+    userPrompt:
+      "Pulse, filtre os e-mails prioritários de clientes hoje e prepare rascunhos de resposta para eu revisar.",
     genericAiResponse:
-      "Devolve um parágrafo longo de dicas soltas que você ainda precisa copiar, quebrar manualmente em tarefas e acompanhar em outro lugar.",
+      "Você precisa copiar e colar cada mensagem manualmente em um chat, perder o contexto do cliente e depois colar o texto de volta no seu e-mail.",
     steps: [
       {
-        label: "1. Pedido",
-        title: "Objetivo do projeto",
-        detail: "Você descreve escopo, prazo desejado e restrições reais.",
+        label: "1. Consultar",
+        title: "Mensagens autorizadas",
+        detail: "Lê somente caixas e escopos explicitamente conectados no workspace autorizado.",
       },
       {
-        label: "2. Plano",
-        title: "Estrutura em etapas",
-        detail: "O Pulse organiza marcos, dependências e checkpoints semanais.",
+        label: "2. Classificar",
+        title: "Triagem por prioridade",
+        detail: "Separa urgências de clientes, cobranças e avisos informativos sem ruído.",
       },
       {
-        label: "3. Tarefas",
-        title: "Escrita supervisionada",
-        detail: "Prepara o lote de tarefas para criação mediante aprovação explícita.",
+        label: "3. Preparar",
+        title: "Rascunhos contextualizados",
+        detail: "Redige propostas de resposta coerentes com o histórico do workspace.",
       },
       {
-        label: "4. Acompanhamento",
-        title: "Visibilidade contínua",
-        detail: "Status, pendências e memória do projeto ficam no mesmo workspace.",
+        label: "4. Aprovar envio",
+        title: "Revisão antes de enviar",
+        detail: "Nenhum e-mail sai automaticamente: você revisa, ajusta e autoriza o envio.",
       },
     ],
     euversoOutcome: {
-      heading: "Plano pronto para virar projeto ativo no workspace",
-      statusLabel: "Exemplo simulado · Operador supervisionado de projetos",
-      statusDot: "#6D28D9",
+      heading: "Triagem pronta e rascunhos aguardando sua revisão",
+      statusLabel: "Demonstração ilustrativa · Em desenvolvimento (etapa S7)",
+      statusDot: "#0369A1",
       items: [
-        "Semana 1: Oferta, materiais comerciais e checklist de validação",
-        "Semana 2: Páginas, fluxo de atendimento e revisão interna",
-        "Semana 3–4: Testes acompanhados, aprovação final e acompanhamento diário",
+        "Prioridade alta: 2 clientes aguardando retorno sobre proposta e cronograma",
+        "Preparação: 2 rascunhos objetivos prontos para edição antes de qualquer disparo",
+        "Status real: leitura segura isolada ativa; agente completo de e-mail em desenvolvimento na S7",
       ],
-      humanControlNote: "Você revisa o plano e aprova antes de criar o projeto no EuVerso.",
+      humanControlNote:
+        "Recurso em evolução na etapa S7 — todo envio externo permanece bloqueado sem sua aprovação explícita.",
     },
   },
   {
-    id: "criar-automacao",
-    tabLabel: "Criar uma automação",
-    workspaceLabel: "Workflow Studio (em validação S6)",
-    accentColor: "#7654E8",
-    userPrompt: "Toda segunda às 8h, consolide tarefas atrasadas e me peça aprovação antes de notificar a equipe.",
-    genericAiResponse:
-      "Responde com um tutorial manual ou um trecho de código solto que não roda, não valida permissões e não oferece controle humano.",
-    steps: [
-      {
-        label: "1. Pedido",
-        title: "Regra em linguagem natural",
-        detail: "Você descreve o gatilho, a análise desejada e o ponto de revisão.",
-      },
-      {
-        label: "2. Workflow proposto",
-        title: "Rascunho visual (Draft)",
-        detail: "O Studio monta blocos e conexões em modo rascunho editável.",
-      },
-      {
-        label: "3. Validação",
-        title: "Dry-Run sem efeitos",
-        detail: "Valida estrutura, permissões e simula o fluxo antes de ativar.",
-      },
-      {
-        label: "4. Execução autorizada",
-        title: "Pausa humana obrigatória",
-        detail: "O fluxo só dispara a notificação depois da sua aprovação de uso único.",
-      },
-    ],
-    euversoOutcome: {
-      heading: "Workflow visual montado com ponto de aprovação",
-      statusLabel: "Exemplo simulado · Recurso em validação (S6)",
-      statusDot: "#6D28D9",
-      items: [
-        "Gatilho: Rotina semanal (segunda-feira, 08:00) no workspace autorizado",
-        "Etapa IA: Consolidar atrasos e sugerir redistribuição com teto FinOps",
-        "Checkpoint humano: Aprovar mensagem antes do envio à equipe",
-      ],
-      humanControlNote: "Automações nunca pulam a etapa de validação e autorização configurada.",
-    },
-  },
-  {
-    id: "acompanhar-missao",
-    tabLabel: "Acompanhar uma missão",
-    workspaceLabel: "Mission Control (em validação S6)",
+    id: "agenda",
+    tabLabel: "Agenda",
+    workspaceLabel: "Workspace Pessoal + Trabalho · Agente de Agenda (Em desenvolvimento S7)",
+    availabilityLabel: "Em desenvolvimento (S7)",
+    availabilityStatus: "em_desenvolvimento",
     accentColor: "#5BD8B6",
-    userPrompt: "Mostre em que etapa está o fechamento operacional da semana e o que depende da minha decisão.",
+    userPrompt:
+      "Pulse, encontre um horário livre na quinta à tarde para alinhar o projeto e reserve foco pela manhã.",
     genericAiResponse:
-      "Um chat comum não mantém estado das execuções, não exibe histórico de etapas nem pausa ações sensíveis aguardando sua decisão.",
+      "Sugere horários hipotéticos sem ver conflitos reais, sem proteger blocos de foco e sem criar nenhum compromisso confirmado.",
     steps: [
       {
-        label: "1. Missão",
-        title: "Execução rastreável",
-        detail: "Cada rotina ganha identificador, linha do tempo e workspace de origem.",
+        label: "1. Disponibilidade",
+        title: "Leitura de conflitos",
+        detail: "Consulta janelas livres e compromissos nos calendários autorizados.",
       },
       {
-        label: "2. Status",
-        title: "Progresso etapa a etapa",
-        detail: "Visualize o que concluiu, o que está em andamento e o custo estimado.",
+        label: "2. Sugestão",
+        title: "Melhor janela do dia",
+        detail: "Propõe bloco de foco pela manhã e reunião sem choques à tarde.",
       },
       {
-        label: "3. Aprovação",
-        title: "Decisão em um clique",
-        detail: "Aprove ou recuse ações sensíveis na Web ou no WhatsApp com auditoria.",
+        label: "3. Confirmação",
+        title: "Revisão dos detalhes",
+        detail: "Exibe horário, participantes e pauta antes de gravar qualquer compromisso.",
       },
       {
-        label: "4. Resultado",
-        title: "Histórico completo",
-        detail: "Entrega final registrada com trilha clara do que foi executado.",
+        label: "4. Evento autorizado",
+        title: "Criação sob aprovação",
+        detail: "Registra o evento apenas após sua confirmação explícita.",
       },
     ],
     euversoOutcome: {
-      heading: "Painel vivo de execução sob seu comando",
-      statusLabel: "Exemplo simulado · Aprovação pendente",
-      statusDot: "#B45309",
+      heading: "Agenda equilibrada com foco protegido e zero conflito",
+      statusLabel: "Demonstração ilustrativa · Em desenvolvimento (etapa S7)",
+      statusDot: "#0369A1",
       items: [
-        "Etapa 1/3 Concluída: Coleta de pendências e status dos projetos",
-        "Etapa 2/3 Aguardando você: Confirmar criação de 3 tarefas de revisão",
-        "Etapa 3/3 Pronta: Gerar resumo executivo no workspace Operação",
+        "Bloco de foco sugerido: quinta-feira, 09:00–11:00 (sem reuniões)",
+        "Janela livre para alinhamento: quinta-feira, 15:00–15:45",
+        "Status real: Agente de Agenda e conectores de calendário em desenvolvimento na etapa S7",
       ],
-      humanControlNote: "Registro auditável de quem aprovou, quando aprovou e o que mudou.",
+      humanControlNote:
+        "Recurso em desenvolvimento na etapa S7 — nenhum convite externo é disparado sem consentimento.",
+    },
+  },
+  {
+    id: "projetos-automacao",
+    tabLabel: "Projetos & Fluxos",
+    workspaceLabel: "Workspace Projetos · Operador Supervisionado + Workflows S6",
+    availabilityLabel: "Disponível (piloto controlado S6)",
+    availabilityStatus: "disponivel",
+    accentColor: "#7654E8",
+    userPrompt:
+      "Toda segunda às 8h, consolide tarefas atrasadas do projeto e me peça aprovação antes de criar revisões.",
+    genericAiResponse:
+      "Entrega um texto ou tutorial solto que não roda de forma recorrente, não valida permissões e não acompanha o andamento.",
+    steps: [
+      {
+        label: "1. Pedido natural",
+        title: "Objetivo em português",
+        detail: "Você descreve o gatilho, o contexto autorizado e o ponto de aprovação.",
+      },
+      {
+        label: "2. Rascunho visual",
+        title: "Validação e Dry-Run",
+        detail: "Estrutura as etapas em rascunho e simula o fluxo sem alterar dados reais.",
+      },
+      {
+        label: "3. Pausa humana",
+        title: "Aprovação de uso único",
+        detail: "Antes de criar tarefas ou notificar a equipe, pausa aguardando seu aceite.",
+      },
+      {
+        label: "4. Continuidade",
+        title: "Histórico no Mission Control",
+        detail: "Registra cada etapa executada, quem aprovou e o consumo de IA.",
+      },
+    ],
+    euversoOutcome: {
+      heading: "Rotina recorrente transformada em fluxo acompanhável",
+      statusLabel: "Demonstração ilustrativa · Plataforma S6 certificada em piloto controlado",
+      statusDot: "#15803D",
+      items: [
+        "Gatilho: toda segunda-feira às 08:00 no workspace autorizado",
+        "Preparação: consolidação de pendências com teto de consumo configurável",
+        "Aprovação: checkpoint obrigatório na Web ou WhatsApp antes de gravar tarefas",
+      ],
+      humanControlNote:
+        "Automações nunca pulam a etapa de validação prévia nem a aprovação humana configurada.",
     },
   },
 ];
+
+export const PULSE_JOURNEY_STEPS = [
+  {
+    number: "01",
+    label: "Conhece",
+    title: "Lê o contexto certo",
+    description: "Consulta apenas o workspace, a memória e as ferramentas que você autorizou.",
+    accent: "#5BD8B6",
+  },
+  {
+    number: "02",
+    label: "Entende",
+    title: "Interpreta o objetivo",
+    description: "Identifica se a solicitação pede consulta, organização, preparação ou fluxo recorrente.",
+    accent: "#FDC616",
+  },
+  {
+    number: "03",
+    label: "Aciona",
+    title: "Chama o especialista adequado",
+    description: "Orquestra agentes, skills e ferramentas com limites claros e pausa para sua aprovação.",
+    accent: "#7654E8",
+  },
+  {
+    number: "04",
+    label: "Acompanha",
+    title: "Fecha o ciclo com você",
+    description: "Mostra o andamento, registra o histórico e mantém continuidade entre Web e WhatsApp.",
+    accent: "#FF8169",
+  },
+] as const;
+
+export const PAIN_PILLARS = [
+  {
+    id: "desconectados",
+    eyebrow: "01 · DESCONEXÃO",
+    title: "Aplicativos desconectados",
+    pain: "E-mails em um app, agenda em outro, despesas em planilhas e projetos espalhados em ferramentas que nunca conversam entre si.",
+    accent: "#FDC616",
+  },
+  {
+    id: "contexto",
+    eyebrow: "02 · RETRABALHO",
+    title: "Perda de contexto",
+    pain: "Decisões importantes se perdem em chats paralelos e IAs genéricas obrigam você a reexplicar sua rotina toda semana.",
+    accent: "#FF8169",
+  },
+  {
+    id: "esforco",
+    eyebrow: "03 · SOBRECARGA",
+    title: "Esforço operacional recorrente",
+    pain: "Mesmo quando você recebe uma boa resposta da IA, ainda precisa copiar, estruturar tarefas e acompanhar cada etapa sozinho.",
+    accent: "#7654E8",
+  },
+] as const;
+
+export const SHIFT_COMPARISON = {
+  today: {
+    eyebrow: "HOJE · CHAT DE IA COMUM",
+    summary: "Você pergunta. A IA responde. E você ainda precisa executar e acompanhar o resto.",
+    points: [
+      "Cada conversa começa do zero, sem conhecer seus mundos nem suas prioridades.",
+      "Entrega texto solto que vira mais trabalho manual para copiar e organizar.",
+      "Sem trilha de execução, sem aprovações e sem continuidade no dia seguinte.",
+    ],
+  },
+  euverso: {
+    eyebrow: "COM O EUVERSO · DELEGAÇÃO COM CONTROLE",
+    summary:
+      "Você pede. O Pulse entende o contexto, aciona os especialistas certos, prepara ou executa ações autorizadas e permite acompanhar os resultados.",
+    points: [
+      "Lê somente o contexto autorizado de cada workspace, sem misturar vida pessoal e empresa.",
+      "Especialistas estruturam tarefas, análises e fluxos com aprovação humana antes de ações sensíveis.",
+      "Você acompanha cada etapa do pedido ao resultado em um só lugar.",
+    ],
+  },
+  closing: "A diferença não é apenas uma resposta. É continuidade.",
+} as const;
 
 export const PROBLEM_FRAGMENTS = [
   {
@@ -252,44 +348,141 @@ export const HOW_IT_WORKS_STEPS = [
 export const WORKSPACES_WORLDS = [
   {
     id: "pessoal",
-    eyebrow: "MUNDO PESSOAL",
-    title: "Casa, finanças e rotina leve",
+    eyebrow: "PESSOAL",
+    title: "Casa, finanças e rotina",
     accent: "#5BD8B6",
     description:
-      "Acompanhe compromissos, metas individuais, tarefas domésticas e controle financeiro sem misturar com clientes ou equipe.",
+      "Organize tarefas pessoais, metas e despesas da casa em um espaço privado, com memória editável e zero mistura com trabalho.",
     highlights: [
-      "Memória pessoal isolada e editável",
+      "Memória pessoal isolada e controlável",
       "Leitura clara de receitas, despesas e cartões",
-      "Pulse focado nas suas prioridades do dia",
+      "Configurações e prioridades só suas",
     ],
   },
   {
-    id: "profissional",
-    eyebrow: "MUNDO PROFISSIONAL",
-    title: "Projetos, clientes e entregas",
+    id: "trabalho",
+    eyebrow: "TRABALHO",
+    title: "Rotina profissional e entregas",
     accent: "#FDC616",
     description:
-      "Centralize demandas de clientes, cronogramas, ideias e automações de rotina com contexto próprio para cada frente de trabalho.",
+      "Separe compromissos do dia a dia profissional, documentos e prioridades sem contaminar seu espaço pessoal.",
     highlights: [
-      "Espaços dedicados por projeto ou operação",
-      "Apoio supervisionado para quebrar planos em tarefas",
-      "Cross-Workspace Context Bridge somente quando autorizado",
+      "Contexto profissional focado na semana",
+      "Tarefas e planos preparados sob aprovação",
+      "Sem fusão silenciosa com outros workspaces",
     ],
   },
   {
-    id: "empresarial",
-    eyebrow: "MUNDO EMPRESARIAL",
-    title: "Equipes, papéis e governança",
+    id: "projetos",
+    eyebrow: "PROJETOS",
+    title: "Iniciativas e automações",
+    accent: "#FF8169",
+    description:
+      "Estruture frentes independentes, lançamentos e fluxos recorrentes com histórico próprio e acompanhamento claro.",
+    highlights: [
+      "Espaço dedicado por iniciativa ou produto",
+      "Workflows com Dry-Run e aprovação humana",
+      "Trilha de decisões e evolução contínua",
+    ],
+  },
+  {
+    id: "clientes",
+    eyebrow: "CLIENTES & EQUIPES",
+    title: "Papéis, chaves e governança",
     accent: "#7654E8",
     description:
-      "Compartilhe processos, workflows e acompanhamentos com papéis bem definidos (Owner, Admin, Member e Viewer) e trilha de auditoria.",
+      "Opere com equipe ou contas de clientes usando papéis claros (Owner, Admin, Member e Viewer) e cofre de IA dedicado.",
     highlights: [
-      "RBAC validado no servidor por workspace",
-      "Cofre BYOK isolado por operação",
-      "Aprovações humanas antes de ações críticas",
+      "Isolamento validado no servidor por workspace",
+      "Permissões RBAC e auditoria por operação",
+      "Credenciais BYOK exclusivas do espaço",
     ],
   },
 ];
+
+export const ACTIVE_CAPABILITIES_SHOWCASE = [
+  {
+    name: "Financeiro (Leitura & Registro Supervisionado)",
+    availability: "disponivel" as const,
+    outcome: "Consulte receitas, despesas, cartões e faturas e prepare lançamentos sob aprovação.",
+    guardrail: "Sem movimentação bancária nem pagamento automático.",
+  },
+  {
+    name: "Projetos & Tarefas",
+    availability: "disponivel" as const,
+    outcome: "Transforme metas e pedidos em etapas, tarefas e prioridades organizadas no workspace.",
+    guardrail: "Toda gravação exige aprovação humana explícita.",
+  },
+  {
+    name: "Automações & Workflows (S6)",
+    availability: "disponivel" as const,
+    outcome: "Estruture rotinas recorrentes com validação prévia (Dry-Run) e acompanhamento no Mission Control.",
+    guardrail: "Certificado em piloto controlado; checkpoints humanos obrigatórios.",
+  },
+  {
+    name: "Skills (SKILL.md) & Ferramentas MCP",
+    availability: "disponivel_com_restricoes" as const,
+    outcome: "Amplie o alcance dos especialistas com habilidades inspecionadas e conectores controlados.",
+    guardrail: "Execução externa somente em ambiente isolado sob allowlist e aprovação.",
+  },
+] as const;
+
+export const SPECIALIST_DOMAINS_CATALOG = [
+  {
+    id: "email",
+    name: "E-mail",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Triar mensagens autorizadas, destacar prioridades e preparar rascunhos para revisão.",
+  },
+  {
+    id: "agenda",
+    name: "Agenda",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Verificar disponibilidade, proteger blocos de foco e sugerir horários sem conflitos.",
+  },
+  {
+    id: "financeiro-2",
+    name: "Financeiro 2.0",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Acompanhar competência, vencimentos e histórico revisável (sem movimentação bancária).",
+  },
+  {
+    id: "meu-dia",
+    name: "Meu Dia",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Reunir seu briefing diário com widgets autorizados de prioridades e rotina.",
+  },
+  {
+    id: "dev",
+    name: "Dev",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Apoiar análises técnicas e propostas de mudança em sandbox isolado (sem auto-merge).",
+  },
+  {
+    id: "tutor",
+    name: "Tutor de Estudos",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Organizar materiais enviados por você em planos de estudo, resumos e revisões.",
+  },
+  {
+    id: "gastronomia",
+    name: "Gastronomia",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Planejar cardápios, receitas e listas de compras respeitando preferências e alergias.",
+  },
+  {
+    id: "saude",
+    name: "Fitness e Saúde",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Organizar hábitos e rotinas de bem-estar com privacidade reforçada (wearables no roadmap).",
+  },
+  {
+    id: "entretenimento",
+    name: "Cinema/Streaming & Futebol",
+    availability: "roadmap" as const,
+    outcome: "Acompanhar estreias, recomendações e jogos conforme integração de provedores planejados.",
+  },
+] as const;
 
 export const AGENTS_SHOWCASE = [
   {
@@ -412,45 +605,54 @@ export const SECURITY_PILLARS = [
   },
 ];
 
+export const AI_PROVIDERS_SUPPORTED = [
+  {
+    name: "OpenAI",
+    detail: "API oficial com roteamento por capacidade e controle de limites por workspace.",
+  },
+  {
+    name: "Google Gemini",
+    detail: "API oficial autenticada por cabeçalho seguro no cofre criptografado do workspace.",
+  },
+  {
+    name: "Google Vertex AI",
+    detail: "Service Account, projeto e localização dedicados por workspace — sem compartilhar credenciais.",
+  },
+  {
+    name: "Anthropic Claude",
+    detail: "API oficial integrada ao gateway unificado com medição transparente e zero retry faturável.",
+  },
+] as const;
+
 export const HOME_FAQ_ITEMS = [
   {
-    question: "O EuVerso é apenas mais um chatbot de IA?",
+    question: "O que é o EuVerso?",
     answer:
-      "Não. Um chatbot comum apenas responde perguntas soltas. O EuVerso combina workspaces isolados, o Pulse com contexto autorizado, agentes especializados, organização de projetos/tarefas/finanças e automações supervisionadas com acompanhamento.",
+      "O EuVerso é uma plataforma de inteligência artificial que conecta seus contextos pessoais, profissionais, projetos e equipes em workspaces isolados. Em vez de um chat genérico, você conversa com o Pulse, que aciona especialistas e fluxos supervisionados para transformar pedidos em ações acompanháveis.",
   },
   {
-    question: "Como o EuVerso evita que minha IA misture vida pessoal e empresa?",
+    question: "Como funciona com WhatsApp?",
     answer:
-      "Por meio de Workspaces isolados no servidor. Cada espaço tem suas próprias tarefas, finanças, memória e permissões. Quando você quiser cruzar informações entre dois espaços autorizados, isso acontece de forma explícita e auditada.",
+      "O WhatsApp é nosso canal comercial principal para tirar dúvidas e conhecer a plataforma. Dentro do produto, a integração usa exclusivamente a API oficial da Meta (quando habilitada no ambiente), com vínculo seguro por código OTP de uso único e continuidade com a conversa do Pulse na Web.",
   },
   {
-    question: "Os agentes executam ações sozinhos sem minha permissão?",
+    question: "Quais integrações estão disponíveis?",
     answer:
-      "Não. Ações de escrita por agentes exigem aprovação humana explícita vinculada aos argumentos exatos daquela ação. Além disso, o EuVerso não realiza movimentações bancárias reais nem pagamentos automáticos.",
+      "Hoje estão ativos os provedores oficiais de IA (OpenAI, Google Gemini, Google Vertex AI e Anthropic Claude via BYOK), gestão de projetos/tarefas, consulta e registro financeiro supervisionado (sem pagamentos bancários), Skills (SKILL.md) e conectores MCP em ambiente isolado sob allowlist. Conectores de e-mail, agenda e provedores externos de mídia, esportes e wearables estão em desenvolvimento (etapa S7) ou no roadmap planejado.",
   },
   {
-    question: "O Workflow Studio e o Mission Control já estão disponíveis?",
+    question: "O que é BYOK e quem paga a IA?",
     answer:
-      "Eles fazem parte da plataforma de workflows (etapa S6), já implementada e atualmente em fase de validação controlada antes da liberação geral. Por transparência, sinalizamos o status real de cada recurso em todo o site.",
+      "BYOK (Bring Your Own Key) significa trazer sua própria chave de API oficial dos provedores suportados, guardada em cofre criptografado por workspace (Cloud KMS). Quando você opera com BYOK, o consumo de tokens e eventuais recursos adicionais é cobrado diretamente pelo seu provedor conforme o modelo e a conta utilizados. Nem toda chave habilita todas as ferramentas, e o EuVerso não realiza retries automáticos em chamadas faturáveis.",
   },
   {
-    question: "O DevAgent já pode ser contratado hoje?",
+    question: "Como funcionam permissões e aprovações?",
     answer:
-      "Não. O DevAgent e os agentes voltados à automação de Pull Requests (etapa S7) são itens de roadmap futuro e não são prometidos como recursos disponíveis no momento.",
+      "Cada workspace isola dados, memória e credenciais no servidor com papéis claros (Owner, Admin, Member e Viewer). Toda ação de escrita sensível por agentes exige aprovação humana explícita de uso único vinculada aos parâmetros exatos da operação. Além disso, o EuVerso não realiza movimentações bancárias reais nem pagamentos automáticos.",
   },
   {
-    question: "Como funciona a integração com o WhatsApp?",
+    question: "O que já está disponível e o que está em evolução?",
     answer:
-      "O WhatsApp é nosso canal comercial principal e, dentro do produto (quando habilitado), funciona exclusivamente via API oficial da Meta com vínculo seguro por código OTP de uso único, conectado à mesma conversa do Pulse na Web.",
-  },
-  {
-    question: "Posso usar minha própria chave de IA (BYOK)?",
-    answer:
-      "Sim. O EuVerso suporta APIs oficiais da OpenAI, Google Gemini, Google Vertex AI e Anthropic Claude em cofre criptografado isolado por workspace, sem retries automáticos em chamadas faturáveis.",
-  },
-  {
-    question: "Por que os planos ainda mostram 'R$ XXX'?",
-    answer:
-      "Os quatro planos (Essencial, Pro, Business e Enterprise) representam nossa arquitetura comercial em aprovação final. Converse pelo WhatsApp para entender qual formato faz sentido para sua rotina ou empresa e receber as condições atualizadas.",
+      "Já estão homologados em produção: Workspaces isolados e RBAC, Pulse com memória em 3 níveis, FinanceAgent somente leitura, operadores supervisionados de projetos e finanças, cofre BYOK e Skills/MCP isolados. A plataforma de workflows (Workflow Studio e Mission Control — etapa S6) está certificada em piloto controlado. Os 10 especialistas pragmáticos ampliados, o Meu Dia declarativo e a busca web governada estão em desenvolvimento na etapa S7 e serão liberados apenas após homologação.",
   },
 ];

@@ -1,0 +1,520 @@
+{
+  "phase": "before",
+  "capturedAt": "2026-11-25T13:24:42.005Z",
+  "baseUrl": "http://127.0.0.1:3005",
+  "desktop": {
+    "viewportName": "desktop-1440",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "audit": {
+      "innerWidth": 1440,
+      "scrollWidth": 1440,
+      "overflowX": false,
+      "scrollHeight": 15622,
+      "h1Count": 1,
+      "h1s": [
+        {
+          "text": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só universo inteligente.",
+          "rect": {
+            "x": 112,
+            "y": 158,
+            "width": 588,
+            "height": 224,
+            "top": 158,
+            "right": 700,
+            "bottom": 382,
+            "left": 112
+          }
+        }
+      ],
+      "sectionCount": 15,
+      "sections": [
+        {
+          "index": 1,
+          "id": "section-1",
+          "heading": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só universo inteligente."
+        },
+        {
+          "index": 2,
+          "id": "problema",
+          "heading": "Sua rotina está em mil lugares. Sua inteligência não precisa estar."
+        },
+        {
+          "index": 3,
+          "id": "como-funciona",
+          "heading": "Organize → Converse → Delegue → Acompanhe."
+        },
+        {
+          "index": 4,
+          "id": "pulse",
+          "heading": "Uma IA que trabalha com o seu contexto."
+        },
+        {
+          "index": 5,
+          "id": "workspaces",
+          "heading": "Você tem vários mundos. O EuVerso entende isso."
+        },
+        {
+          "index": 6,
+          "id": "agentes",
+          "heading": "Não faça tudo sozinho. Trabalhe com agentes."
+        },
+        {
+          "index": 7,
+          "id": "automacoes",
+          "heading": "Da conversa à execução."
+        },
+        {
+          "index": 8,
+          "id": "workflow-studio",
+          "heading": "Crie automações visualmente — valide e simule antes de ativar."
+        },
+        {
+          "index": 9,
+          "id": "mission-control",
+          "heading": "Veja o trabalho acontecendo — sem perder o comando."
+        },
+        {
+          "index": 10,
+          "id": "funcionalidades-adicionais",
+          "heading": "Tudo conectado no mesmo lugar — do dia a dia à governança."
+        },
+        {
+          "index": 11,
+          "id": "para-quem-e",
+          "heading": "Comece no seu ritmo — do pessoal à operação em equipe."
+        },
+        {
+          "index": 12,
+          "id": "seguranca",
+          "heading": "Inteligente para executar. Seguro para você decidir."
+        },
+        {
+          "index": 13,
+          "id": "planos",
+          "heading": "Quatro formatos pensados para cada momento da sua jornada."
+        },
+        {
+          "index": 14,
+          "id": "faq",
+          "heading": "Respostas diretas, sem letra miúda."
+        },
+        {
+          "index": 15,
+          "id": "section-15",
+          "heading": "Chega de só organizar o que precisa ser feito. Comece a fazer acontecer."
+        }
+      ],
+      "brokenImages": [
+        {
+          "src": "/illustrations/03-automacoes-conexoes.png",
+          "alt": "Ilustração do núcleo EuVerso conectando conversas, listas, calendário, métricas e nós de automação em um fluxo supervisionado",
+          "complete": false,
+          "naturalWidth": 0,
+          "naturalHeight": 0
+        }
+      ],
+      "totalImages": 5,
+      "missingAltImages": [],
+      "totalLinks": 39,
+      "title": "EuVerso — Uma inteligência para organizar seus mundos e fazer acontecer",
+      "metaDescription": "Organize seus espaços, converse com o Pulse e transforme ideias, tarefas e processos em ações acompanháveis com inteligência artificial contextual."
+    },
+    "interactions": {
+      "heroSecondaryCta": {
+        "href": "#como-funciona",
+        "clicked": true
+      },
+      "tabsTested": {
+        "totalTabs": 7,
+        "verifiedSelected": 6
+      },
+      "keyboardTabFocusTag": "BUTTON",
+      "faqToggle": {
+        "beforeExp": "true",
+        "afterExp": "false",
+        "changed": true
+      },
+      "reducedMotionScrollBehavior": "auto"
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "mobile": {
+    "viewportName": "mobile-390",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "audit": {
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflowX": false,
+      "scrollHeight": 30400,
+      "h1Count": 1,
+      "h1s": [
+        {
+          "text": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só universo inteligente.",
+          "rect": {
+            "x": 16,
+            "y": 154,
+            "width": 358,
+            "height": 220,
+            "top": 154,
+            "right": 374,
+            "bottom": 374,
+            "left": 16
+          }
+        }
+      ],
+      "sectionCount": 15,
+      "sections": [
+        {
+          "index": 1,
+          "id": "section-1",
+          "heading": "Sua vida. Seu trabalho. Seus projetos. Tudo em um só universo inteligente."
+        },
+        {
+          "index": 2,
+          "id": "problema",
+          "heading": "Sua rotina está em mil lugares. Sua inteligência não precisa estar."
+        },
+        {
+          "index": 3,
+          "id": "como-funciona",
+          "heading": "Organize → Converse → Delegue → Acompanhe."
+        },
+        {
+          "index": 4,
+          "id": "pulse",
+          "heading": "Uma IA que trabalha com o seu contexto."
+        },
+        {
+          "index": 5,
+          "id": "workspaces",
+          "heading": "Você tem vários mundos. O EuVerso entende isso."
+        },
+        {
+          "index": 6,
+          "id": "agentes",
+          "heading": "Não faça tudo sozinho. Trabalhe com agentes."
+        },
+        {
+          "index": 7,
+          "id": "automacoes",
+          "heading": "Da conversa à execução."
+        },
+        {
+          "index": 8,
+          "id": "workflow-studio",
+          "heading": "Crie automações visualmente — valide e simule antes de ativar."
+        },
+        {
+          "index": 9,
+          "id": "mission-control",
+          "heading": "Veja o trabalho acontecendo — sem perder o comando."
+        },
+        {
+          "index": 10,
+          "id": "funcionalidades-adicionais",
+          "heading": "Tudo conectado no mesmo lugar — do dia a dia à governança."
+        },
+        {
+          "index": 11,
+          "id": "para-quem-e",
+          "heading": "Comece no seu ritmo — do pessoal à operação em equipe."
+        },
+        {
+          "index": 12,
+          "id": "seguranca",
+          "heading": "Inteligente para executar. Seguro para você decidir."
+        },
+        {
+          "index": 13,
+          "id": "planos",
+          "heading": "Quatro formatos pensados para cada momento da sua jornada."
+        },
+        {
+          "index": 14,
+          "id": "faq",
+          "heading": "Respostas diretas, sem letra miúda."
+        },
+        {
+          "index": 15,
+          "id": "section-15",
+          "heading": "Chega de só organizar o que precisa ser feito. Comece a fazer acontecer."
+        }
+      ],
+      "brokenImages": [
+        {
+          "src": "/illustrations/02-pulse-orbital.png",
+          "alt": "Ilustração do Pulse como uma presença orbital amarela cercada por agenda, tarefas, gráficos, conversas e fluxos no contexto do usuário",
+          "complete": false,
+          "naturalWidth": 0,
+          "naturalHeight": 0
+        },
+        {
+          "src": "/illustrations/03-automacoes-conexoes.png",
+          "alt": "Ilustração do núcleo EuVerso conectando conversas, listas, calendário, métricas e nós de automação em um fluxo supervisionado",
+          "complete": false,
+          "naturalWidth": 0,
+          "naturalHeight": 0
+        }
+      ],
+      "totalImages": 5,
+      "missingAltImages": [],
+      "totalLinks": 39,
+      "title": "EuVerso — Uma inteligência para organizar seus mundos e fazer acontecer",
+      "metaDescription": "Organize seus espaços, converse com o Pulse e transforme ideias, tarefas e processos em ações acompanháveis com inteligência artificial contextual."
+    },
+    "interactions": {
+      "heroSecondaryCta": {
+        "href": "#como-funciona",
+        "clicked": true
+      },
+      "tabsTested": {
+        "totalTabs": 7,
+        "verifiedSelected": 6
+      },
+      "keyboardTabFocusTag": "BUTTON",
+      "faqToggle": {
+        "beforeExp": "true",
+        "afterExp": "false",
+        "changed": true
+      },
+      "reducedMotionScrollBehavior": "auto"
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "routes": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/funcionalidades",
+      "status": 200
+    },
+    {
+      "route": "/pulse",
+      "status": 200
+    },
+    {
+      "route": "/workspaces",
+      "status": 200
+    },
+    {
+      "route": "/agentes-de-ia",
+      "status": 200
+    },
+    {
+      "route": "/automacoes-com-ia",
+      "status": 200
+    },
+    {
+      "route": "/workflow-studio",
+      "status": 200
+    },
+    {
+      "route": "/ia-para-produtividade",
+      "status": 200
+    },
+    {
+      "route": "/ia-para-empresas",
+      "status": 200
+    },
+    {
+      "route": "/planos",
+      "status": 200
+    },
+    {
+      "route": "/contato",
+      "status": 200
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200
+    }
+  ],
+  "manifest": [
+    {
+      "file": "before-desktop-1440-01-hero-above-fold.png",
+      "bytes": 397496,
+      "sha256": "316d64e9ec658f1f9e492c62b5d22726b7750e4017507bea255134e56c4ed56c"
+    },
+    {
+      "file": "before-desktop-1440-full.png",
+      "bytes": 2378959,
+      "sha256": "5f9b7a2a0eea207e7389166bf6d434351eb5e60624564431de2e16a7451bb49d"
+    },
+    {
+      "file": "before-desktop-1440-dobra-01-sec-01.png",
+      "bytes": 486379,
+      "sha256": "9fdf5cfbbdeee9bba11c7c275c93aeda8ceda3af97e58b0c5e2a2f93b1e9eba5"
+    },
+    {
+      "file": "before-desktop-1440-dobra-02-problema.png",
+      "bytes": 48304,
+      "sha256": "943bb28a4db5e5d5311d9eea334ed827b953a35775e0d9b2f375e3358a36bf20"
+    },
+    {
+      "file": "before-desktop-1440-dobra-03-como-funciona.png",
+      "bytes": 73951,
+      "sha256": "a7b9c70eac568c3ddf675c5dcf780a9cd77bc5bd877d9516575c26384f7cda9c"
+    },
+    {
+      "file": "before-desktop-1440-dobra-04-pulse.png",
+      "bytes": 318616,
+      "sha256": "5bb3e3241569a4a0c87781fc46b81d005f51efd5d05b4e9d0dc991e0f74f6bde"
+    },
+    {
+      "file": "before-desktop-1440-dobra-05-workspaces.png",
+      "bytes": 107484,
+      "sha256": "0f827b1430d672bb54c0a2b40c525c67c667a1fdc50fdecacffeb0b4bc8c1ede"
+    },
+    {
+      "file": "before-desktop-1440-dobra-06-agentes.png",
+      "bytes": 123341,
+      "sha256": "6bdde3846833fbf36867285d3d550ed9f9fed6bda1515eee3a245e73fe4104ae"
+    },
+    {
+      "file": "before-desktop-1440-dobra-07-automacoes.png",
+      "bytes": 413793,
+      "sha256": "c8f379223ae07f672564d5bdada27c4cfb67f3c4f5822447d048e6b1a3131da0"
+    },
+    {
+      "file": "before-desktop-1440-dobra-08-workflow-studio.png",
+      "bytes": 114958,
+      "sha256": "680ce7e4b4953279754870a26f7e6e5e34378c1daf765e505743f89ba66e7880"
+    },
+    {
+      "file": "before-desktop-1440-dobra-09-mission-control.png",
+      "bytes": 105157,
+      "sha256": "a91a217f370e44d142e1268dd95cf1d05f5b8b8a13b2ef2e44caff3ebfa5f18e"
+    },
+    {
+      "file": "before-desktop-1440-dobra-10-funcionalidades-adicionais.png",
+      "bytes": 97811,
+      "sha256": "2681a073d22b2b6869a5620f53d07c66792e9caac2b48b61fbf01e8f0638c386"
+    },
+    {
+      "file": "before-desktop-1440-dobra-11-para-quem-e.png",
+      "bytes": 105450,
+      "sha256": "b7ef0b48081252c30b506e8010b660b1234b0bda1f23f31fc069abd59d6644ee"
+    },
+    {
+      "file": "before-desktop-1440-dobra-12-seguranca.png",
+      "bytes": 98619,
+      "sha256": "3014f1691fa3afea04de4214562242670e643fa3f55a2a175c95d4596bec63d7"
+    },
+    {
+      "file": "before-desktop-1440-dobra-13-planos.png",
+      "bytes": 222616,
+      "sha256": "458ff1a2c155f80f9b9372cda8a6016d2808f9c2dee3a0381990606774c31c2d"
+    },
+    {
+      "file": "before-desktop-1440-dobra-14-faq.png",
+      "bytes": 109811,
+      "sha256": "cce8d7064ca0c1a139d8c46830b4dc60986b9f39b1b0dd98824a1f9c38d8cf65"
+    },
+    {
+      "file": "before-desktop-1440-dobra-15-sec-15.png",
+      "bytes": 50138,
+      "sha256": "3505a79a7f82989f5b5004bb0b8d315354be841c5fd883885e9b35b80284caa6"
+    },
+    {
+      "file": "before-mobile-390-01-hero-above-fold.png",
+      "bytes": 64005,
+      "sha256": "118fb10fc7bbd394bc32f05f15c6d8370e43b171939748ec99ba6b00aa744d78"
+    },
+    {
+      "file": "before-mobile-390-full.png",
+      "bytes": 1972228,
+      "sha256": "5f1339b08e6097da108451ddd8c86f95654492e958ea508c63f1bdd59c48eb48"
+    },
+    {
+      "file": "before-mobile-390-dobra-01-sec-01.png",
+      "bytes": 311274,
+      "sha256": "670cd552649ac808e5cac66016a62eb8b1d668468a72c38f4d055bc23f6eb8b7"
+    },
+    {
+      "file": "before-mobile-390-dobra-02-problema.png",
+      "bytes": 64600,
+      "sha256": "b87f75ea330157c744d6c2160c4dae1624bf248727427391aa654d134bb94ae9"
+    },
+    {
+      "file": "before-mobile-390-dobra-03-como-funciona.png",
+      "bytes": 84602,
+      "sha256": "a295403431a7d6e3ce8aa19349501fff809b7df8bcf5234cd063bae38241ee74"
+    },
+    {
+      "file": "before-mobile-390-dobra-04-pulse.png",
+      "bytes": 208752,
+      "sha256": "591305f6ac8317965a4daf603ba838ce7b2849f285e58d94c77231d5da4c28b7"
+    },
+    {
+      "file": "before-mobile-390-dobra-05-workspaces.png",
+      "bytes": 104295,
+      "sha256": "98ca394f0d31b0fc1cd186f1f2db3d3ba76709223715db3310c08e085d4ada07"
+    },
+    {
+      "file": "before-mobile-390-dobra-06-agentes.png",
+      "bytes": 122069,
+      "sha256": "909a8b894e7d035610905c8c7874af49dbf6f081bbda3f234e153b26160a52f2"
+    },
+    {
+      "file": "before-mobile-390-dobra-07-automacoes.png",
+      "bytes": 175243,
+      "sha256": "dc2ae858cb37eb3d3cc87ad9d1c76009800266d98e525b9944036e42d74595a5"
+    },
+    {
+      "file": "before-mobile-390-dobra-08-workflow-studio.png",
+      "bytes": 100490,
+      "sha256": "c0582ab8f6debd199a20d7fe1da11356c4ab90d9a23118122104d3c69625b6fe"
+    },
+    {
+      "file": "before-mobile-390-dobra-09-mission-control.png",
+      "bytes": 102315,
+      "sha256": "e7bac98995358b486a3bff712d38ecdb4fe299a8062e507a62d6fb34a8a1b38e"
+    },
+    {
+      "file": "before-mobile-390-dobra-10-funcionalidades-adicionais.png",
+      "bytes": 107083,
+      "sha256": "fc54bc5654181cdd5943d2be19e60afdcf0b6f93ad31386924d93cf8d0038400"
+    },
+    {
+      "file": "before-mobile-390-dobra-11-para-quem-e.png",
+      "bytes": 117971,
+      "sha256": "0cdeece16507acba4369da0127bb3e025317f4aaa76a93a731cc5611c8f79c9f"
+    },
+    {
+      "file": "before-mobile-390-dobra-12-seguranca.png",
+      "bytes": 115133,
+      "sha256": "bd5ea329563d1f74e03f67d29c433948eb52bc4843de79b512fd8ba0030a6e03"
+    },
+    {
+      "file": "before-mobile-390-dobra-13-planos.png",
+      "bytes": 211418,
+      "sha256": "811bd9782799216f7cdc640dffae93990050437d69cd12541700eccc1242926e"
+    },
+    {
+      "file": "before-mobile-390-dobra-14-faq.png",
+      "bytes": 96575,
+      "sha256": "72afc210a0933977288b3f52dfda971ee47f55897958b2baee529c7cda825f28"
+    },
+    {
+      "file": "before-mobile-390-dobra-15-sec-15.png",
+      "bytes": 50160,
+      "sha256": "10e8cf22a0eb0c77be64a38d596e99bf2e456f91e8d9f2150f34dac4327b3de1"
+    }
+  ]
+}

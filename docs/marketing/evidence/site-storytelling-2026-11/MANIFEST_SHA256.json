@@ -1,0 +1,331 @@
+﻿{
+    "summary":  {
+                    "before":  {
+                                   "desktopSections":  15,
+                                   "desktopHeightPx":  15622,
+                                   "files":  34,
+                                   "mobileHeightPx":  30400
+                               },
+                    "after":  {
+                                  "desktopSections":  11,
+                                  "desktopHeightPx":  12964,
+                                  "files":  28,
+                                  "mobileHeightPx":  25555
+                              }
+                },
+    "before":  [
+                   {
+                       "file":  "before-desktop-1440-01-hero-above-fold.png",
+                       "bytes":  397496,
+                       "sha256":  "316d64e9ec658f1f9e492c62b5d22726b7750e4017507bea255134e56c4ed56c"
+                   },
+                   {
+                       "file":  "before-desktop-1440-full.png",
+                       "bytes":  2378959,
+                       "sha256":  "5f9b7a2a0eea207e7389166bf6d434351eb5e60624564431de2e16a7451bb49d"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-01-sec-01.png",
+                       "bytes":  486379,
+                       "sha256":  "9fdf5cfbbdeee9bba11c7c275c93aeda8ceda3af97e58b0c5e2a2f93b1e9eba5"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-02-problema.png",
+                       "bytes":  48304,
+                       "sha256":  "943bb28a4db5e5d5311d9eea334ed827b953a35775e0d9b2f375e3358a36bf20"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-03-como-funciona.png",
+                       "bytes":  73951,
+                       "sha256":  "a7b9c70eac568c3ddf675c5dcf780a9cd77bc5bd877d9516575c26384f7cda9c"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-04-pulse.png",
+                       "bytes":  318616,
+                       "sha256":  "5bb3e3241569a4a0c87781fc46b81d005f51efd5d05b4e9d0dc991e0f74f6bde"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-05-workspaces.png",
+                       "bytes":  107484,
+                       "sha256":  "0f827b1430d672bb54c0a2b40c525c67c667a1fdc50fdecacffeb0b4bc8c1ede"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-06-agentes.png",
+                       "bytes":  123341,
+                       "sha256":  "6bdde3846833fbf36867285d3d550ed9f9fed6bda1515eee3a245e73fe4104ae"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-07-automacoes.png",
+                       "bytes":  413793,
+                       "sha256":  "c8f379223ae07f672564d5bdada27c4cfb67f3c4f5822447d048e6b1a3131da0"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-08-workflow-studio.png",
+                       "bytes":  114958,
+                       "sha256":  "680ce7e4b4953279754870a26f7e6e5e34378c1daf765e505743f89ba66e7880"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-09-mission-control.png",
+                       "bytes":  105157,
+                       "sha256":  "a91a217f370e44d142e1268dd95cf1d05f5b8b8a13b2ef2e44caff3ebfa5f18e"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-10-funcionalidades-adicionais.png",
+                       "bytes":  97811,
+                       "sha256":  "2681a073d22b2b6869a5620f53d07c66792e9caac2b48b61fbf01e8f0638c386"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-11-para-quem-e.png",
+                       "bytes":  105450,
+                       "sha256":  "b7ef0b48081252c30b506e8010b660b1234b0bda1f23f31fc069abd59d6644ee"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-12-seguranca.png",
+                       "bytes":  98619,
+                       "sha256":  "3014f1691fa3afea04de4214562242670e643fa3f55a2a175c95d4596bec63d7"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-13-planos.png",
+                       "bytes":  222616,
+                       "sha256":  "458ff1a2c155f80f9b9372cda8a6016d2808f9c2dee3a0381990606774c31c2d"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-14-faq.png",
+                       "bytes":  109811,
+                       "sha256":  "cce8d7064ca0c1a139d8c46830b4dc60986b9f39b1b0dd98824a1f9c38d8cf65"
+                   },
+                   {
+                       "file":  "before-desktop-1440-dobra-15-sec-15.png",
+                       "bytes":  50138,
+                       "sha256":  "3505a79a7f82989f5b5004bb0b8d315354be841c5fd883885e9b35b80284caa6"
+                   },
+                   {
+                       "file":  "before-mobile-390-01-hero-above-fold.png",
+                       "bytes":  64005,
+                       "sha256":  "118fb10fc7bbd394bc32f05f15c6d8370e43b171939748ec99ba6b00aa744d78"
+                   },
+                   {
+                       "file":  "before-mobile-390-full.png",
+                       "bytes":  1972228,
+                       "sha256":  "5f1339b08e6097da108451ddd8c86f95654492e958ea508c63f1bdd59c48eb48"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-01-sec-01.png",
+                       "bytes":  311274,
+                       "sha256":  "670cd552649ac808e5cac66016a62eb8b1d668468a72c38f4d055bc23f6eb8b7"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-02-problema.png",
+                       "bytes":  64600,
+                       "sha256":  "b87f75ea330157c744d6c2160c4dae1624bf248727427391aa654d134bb94ae9"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-03-como-funciona.png",
+                       "bytes":  84602,
+                       "sha256":  "a295403431a7d6e3ce8aa19349501fff809b7df8bcf5234cd063bae38241ee74"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-04-pulse.png",
+                       "bytes":  208752,
+                       "sha256":  "591305f6ac8317965a4daf603ba838ce7b2849f285e58d94c77231d5da4c28b7"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-05-workspaces.png",
+                       "bytes":  104295,
+                       "sha256":  "98ca394f0d31b0fc1cd186f1f2db3d3ba76709223715db3310c08e085d4ada07"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-06-agentes.png",
+                       "bytes":  122069,
+                       "sha256":  "909a8b894e7d035610905c8c7874af49dbf6f081bbda3f234e153b26160a52f2"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-07-automacoes.png",
+                       "bytes":  175243,
+                       "sha256":  "dc2ae858cb37eb3d3cc87ad9d1c76009800266d98e525b9944036e42d74595a5"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-08-workflow-studio.png",
+                       "bytes":  100490,
+                       "sha256":  "c0582ab8f6debd199a20d7fe1da11356c4ab90d9a23118122104d3c69625b6fe"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-09-mission-control.png",
+                       "bytes":  102315,
+                       "sha256":  "e7bac98995358b486a3bff712d38ecdb4fe299a8062e507a62d6fb34a8a1b38e"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-10-funcionalidades-adicionais.png",
+                       "bytes":  107083,
+                       "sha256":  "fc54bc5654181cdd5943d2be19e60afdcf0b6f93ad31386924d93cf8d0038400"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-11-para-quem-e.png",
+                       "bytes":  117971,
+                       "sha256":  "0cdeece16507acba4369da0127bb3e025317f4aaa76a93a731cc5611c8f79c9f"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-12-seguranca.png",
+                       "bytes":  115133,
+                       "sha256":  "bd5ea329563d1f74e03f67d29c433948eb52bc4843de79b512fd8ba0030a6e03"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-13-planos.png",
+                       "bytes":  211418,
+                       "sha256":  "811bd9782799216f7cdc640dffae93990050437d69cd12541700eccc1242926e"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-14-faq.png",
+                       "bytes":  96575,
+                       "sha256":  "72afc210a0933977288b3f52dfda971ee47f55897958b2baee529c7cda825f28"
+                   },
+                   {
+                       "file":  "before-mobile-390-dobra-15-sec-15.png",
+                       "bytes":  50160,
+                       "sha256":  "10e8cf22a0eb0c77be64a38d596e99bf2e456f91e8d9f2150f34dac4327b3de1"
+                   }
+               ],
+    "generatedAt":  "2026-11-25T14:04:31.5659245Z",
+    "after":  [
+                  {
+                      "file":  "after-desktop-1440-01-hero-above-fold.png",
+                      "bytes":  391194,
+                      "sha256":  "1813bd3fa7dd0b375ee48bbb80b0b831abced9aae919b99677e259e13a8ce5ee"
+                  },
+                  {
+                      "file":  "after-desktop-1440-full.png",
+                      "bytes":  1813292,
+                      "sha256":  "3c1265004dea2569b8356587ee5c53dfb18047999a6e861a6cb3b55269e7fa04"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-01-inicio.png",
+                      "bytes":  354417,
+                      "sha256":  "0bdfd6f3d96c102ecb805fea9986606c341097c189b151bed530bab66dbc68ea"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-02-problema.png",
+                      "bytes":  53047,
+                      "sha256":  "7525716dbe2e4992a3926181ba6b1d2a5a589fc65516bac728d9686d08b08f47"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-03-virada.png",
+                      "bytes":  106377,
+                      "sha256":  "9566356495d9e2953608a12e8fb24fe5b9bd901734ed88169e1e07bcd90b8433"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-04-demonstracao.png",
+                      "bytes":  153866,
+                      "sha256":  "993f811f596e3d26b4bde0b725d32c44b0d1e1f54e2994448edbba8c57b02b0d"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-05-pulse.png",
+                      "bytes":  375217,
+                      "sha256":  "508b36661ee79f3563e9ffbda33276eabe0d4492555cdfe88d949e828f0c938b"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-06-agentes.png",
+                      "bytes":  173376,
+                      "sha256":  "23a7cdcc3c441a32b61766b744dd7a53bcf8df44800fcbc4c3f5425ea67cda34"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-07-workspaces.png",
+                      "bytes":  119931,
+                      "sha256":  "74a260d5a96daba3cb4836c25051c8d0f393df0e84bd7484a0765e216f631376"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-08-meu-dia.png",
+                      "bytes":  125454,
+                      "sha256":  "7c56a50994f7e262b4d633d0f1353d438630733e236c23de927b38766c597c54"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-09-mission-control.png",
+                      "bytes":  112203,
+                      "sha256":  "50cd2bfd66a65f48c064ba5a5bf7c075c26369825be9448853cdc0a461aa92f8"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-10-seguranca.png",
+                      "bytes":  156516,
+                      "sha256":  "52f8ff480e4b9840b609509672a791dd7e86aa104a11e56f83a67aaeac474e35"
+                  },
+                  {
+                      "file":  "after-desktop-1440-dobra-11-conversao.png",
+                      "bytes":  139720,
+                      "sha256":  "0cdb3c43eace628d2eecbce812df5b2d381d15676f5ddc6c004ca3d19b679b70"
+                  },
+                  {
+                      "file":  "after-desktop-1440-walkthrough.webm",
+                      "bytes":  8340046,
+                      "sha256":  "67a783acaa5272ef42b6cfd1034af00113fced9dd2b4259850a9b2300b9d29ce"
+                  },
+                  {
+                      "file":  "after-mobile-390-01-hero-above-fold.png",
+                      "bytes":  116382,
+                      "sha256":  "e58c60743ed157dd39c6acae907dd9d65f630e02bd45338065103c302729326a"
+                  },
+                  {
+                      "file":  "after-mobile-390-full.png",
+                      "bytes":  1546855,
+                      "sha256":  "000ec5b66130b248e586264263fc075ff64d0be3ddb364e75a4e31e9dad8b19f"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-01-inicio.png",
+                      "bytes":  167427,
+                      "sha256":  "c1abbdf6625957a779a3eeecf61dfa36b0284ea08cc4acd44b29ac98e3f19140"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-02-problema.png",
+                      "bytes":  58647,
+                      "sha256":  "380145e39035caf4b6cd894240c895ac7ec784bd2e006c118af688eaabe295bb"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-03-virada.png",
+                      "bytes":  91058,
+                      "sha256":  "e6929d03ced3d80b8b2bb25caf10c79279e9e50d21e31dff8e9f77ea0c363f28"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-04-demonstracao.png",
+                      "bytes":  146167,
+                      "sha256":  "04b6d4b42e0e8f286cf464d9da8c237eae5872a569a42ecefb3c049e1e1efa2f"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-05-pulse.png",
+                      "bytes":  273265,
+                      "sha256":  "26a8e19caf3e5ba27f3f60aeaa39a8a0178f73abd616f3c3e72b1148aa6a0a80"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-06-agentes.png",
+                      "bytes":  191071,
+                      "sha256":  "d851bf2beb1df4620eba0b6dad391c52b8fd8daa5538683fd4b45029d97ac25a"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-07-workspaces.png",
+                      "bytes":  118446,
+                      "sha256":  "b6824d4b550491ed84c326b430be1505ce2df219c2825e80397b4a140e015ebe"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-08-meu-dia.png",
+                      "bytes":  132589,
+                      "sha256":  "de3363d08933ef7118253d419bd3b7cda08b40095ec9b621d4f4dc2f5519e98d"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-09-mission-control.png",
+                      "bytes":  107165,
+                      "sha256":  "1bbbebaf3fb3950e84e909eaa1ed5a1762257c6cf8273aa2c94d2b6208c92038"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-10-seguranca.png",
+                      "bytes":  174879,
+                      "sha256":  "f22059bcc2e636ae4fb2f8dad5521fdd7347cc17ddbce812ef526e5bea83fd23"
+                  },
+                  {
+                      "file":  "after-mobile-390-dobra-11-conversao.png",
+                      "bytes":  113667,
+                      "sha256":  "eb3e2118f6e8b7726ec77e53d616e151a39ad84d41ab96cd12a098947736d805"
+                  },
+                  {
+                      "file":  "after-mobile-390-walkthrough.webm",
+                      "bytes":  2446492,
+                      "sha256":  "dc5d4a1b2479ad498f75373aa84da9e4497bc62002f5aebdaee4e6ca0bac1df6"
+                  }
+              ]
+}
