@@ -2,27 +2,21 @@ import Link from "next/link";
 import {
   ArrowDown,
   ArrowRight,
-  Brain,
   CheckCircle2,
-  Cpu,
-  FolderKanban,
   KeyRound,
   Layers,
-  MessageCircle,
-  Plug,
   ShieldCheck,
   Sparkles,
-  Wallet,
   XCircle,
 } from "lucide-react";
 import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 import {
-  AGENTS_SHOWCASE,
-  AUDIENCES,
+  ACTIVE_CAPABILITIES_SHOWCASE,
   HOME_FAQ_ITEMS,
   PAIN_PILLARS,
   SECURITY_PILLARS,
   SHIFT_COMPARISON,
+  SPECIALIST_DOMAINS_CATALOG,
   WORKSPACES_WORLDS,
 } from "@/data/home-content";
 import { ResponsiveIllustration } from "@/components/ui/ResponsiveIllustration";
@@ -30,9 +24,8 @@ import { StatusDot } from "@/components/ui/StatusDot";
 import { WhatsAppButton } from "@/components/conversion/WhatsAppButton";
 import { HeroInteractiveDemo } from "@/components/home/HeroInteractiveDemo";
 import { PulseDemoSection } from "@/components/home/PulseDemoSection";
-import { WorkflowStudioShowcase } from "@/components/home/WorkflowStudioShowcase";
+import { MeuDiaPreviewSection } from "@/components/home/MeuDiaPreviewSection";
 import { MissionControlShowcase } from "@/components/home/MissionControlShowcase";
-import { PlansGrid } from "@/components/shared/PlansGrid";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 
 export const metadata = buildPageMetadata({
@@ -51,59 +44,6 @@ export const metadata = buildPageMetadata({
     "criação de workflows com IA",
   ],
 });
-
-const ADDITIONAL_FEATURES = [
-  {
-    icon: FolderKanban,
-    title: "Projetos & Tarefas",
-    status: "disponivel" as const,
-    text: "Estruture metas, etapas e próximos passos dentro de cada workspace com apoio direto do Pulse.",
-    href: "/ia-para-produtividade",
-  },
-  {
-    icon: Wallet,
-    title: "Finanças Contextuais",
-    status: "disponivel" as const,
-    text: "Acompanhe receitas, despesas, cartões e faturas com leitura precisa via FinanceAgent (sem movimentação bancária).",
-    href: "/funcionalidades",
-  },
-  {
-    icon: Brain,
-    title: "Memória em 3 Níveis",
-    status: "disponivel" as const,
-    text: "Isolamento entre conversa, workspace e preferências duráveis, com proveniência, correção e exclusão auditável.",
-    href: "/pulse",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp Oficial",
-    status: "disponivel_com_restricoes" as const,
-    text: "Canal comercial principal e, quando habilitado, conectado à mesma thread do Pulse via API oficial da Meta.",
-    href: "/contato",
-  },
-  {
-    icon: Cpu,
-    title: "Modelos de IA & BYOK",
-    status: "disponivel" as const,
-    text: "OpenAI, Google Gemini, Google Vertex AI e Anthropic Claude em cofre criptografado por workspace.",
-    href: "/ia-para-empresas",
-  },
-  {
-    icon: Plug,
-    title: "Integrações, Skills & MCP",
-    status: "disponivel_com_restricoes" as const,
-    text: "Padrão aberto SKILL.md e ferramentas MCP em ambiente efêmero isolado com aprovação explícita.",
-    href: "/agentes-de-ia",
-  },
-];
-
-const AUTOMATION_PIPELINE = [
-  { step: "01", title: "Solicitação", desc: "Você descreve o processo ao Pulse em português claro." },
-  { step: "02", title: "Planejamento", desc: "O EuVerso organiza etapas, contexto autorizado e pontos de revisão." },
-  { step: "03", title: "Workflow", desc: "Gera um fluxo visual em modo rascunho pronto para validação e Dry-Run." },
-  { step: "04", title: "Aprovação", desc: "Pausa em ações sensíveis aguardando sua decisão na Web ou WhatsApp." },
-  { step: "05", title: "Resultado", desc: "Executa com rastreabilidade e registra histórico e custos no Mission Control." },
-];
 
 export default function HomePage() {
   const faqJsonLd = buildFaqJsonLd(HOME_FAQ_ITEMS);
@@ -310,23 +250,108 @@ export default function HomePage() {
       <PulseDemoSection />
 
       {/* =====================================================================
-          05 — WORKSPACES
+          06 — CATÁLOGO / AGENTES PRAGMÁTICOS (HONESTIDADE PROD vs. S7)
       ====================================================================== */}
-      <section id="workspaces" className="bg-[#FFF9EC] py-20 lg:py-24">
+      <section id="agentes" className="bg-[#FFFFFF] py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div className="max-w-3xl">
+              <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
+                06 · ESPECIALISTAS POR DOMÍNIO
+              </p>
+              <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
+                Um especialista para cada tipo de necessidade.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-[#262626]">
+                Em vez de um chat genérico tentando fazer tudo, o EuVerso combina capacidades ativas hoje com novos especialistas em evolução na etapa S7 — sempre com status real e limites claros.
+              </p>
+            </div>
+            <Link href="/agentes-de-ia" className="comic-btn-secondary">
+              <span>Ver detalhes dos especialistas</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+
+          {/* Bloco A: Capacidades ativas na plataforma */}
+          <div className="mt-10">
+            <p className="font-mono text-xs font-semibold tracking-wider text-[#52525B] uppercase">
+              ATIVOS NA PLATAFORMA HOJE (PROD / PILOTO CONTROLADO S6)
+            </p>
+            <div className="mt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {ACTIVE_CAPABILITIES_SHOWCASE.map((item) => (
+                <article
+                  key={item.name}
+                  className="comic-panel comic-panel-interactive flex flex-col justify-between bg-[#FFFFFF] p-6"
+                >
+                  <div>
+                    <StatusDot status={item.availability} showShort />
+                    <h3 className="font-display mt-4 text-lg leading-6 font-semibold text-[#080808]">
+                      {item.name}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-[#262626]">{item.outcome}</p>
+                  </div>
+                  <div className="mt-4 rounded-xl border border-[#080808]/20 bg-[#FFF9EC] p-3 text-xs leading-5 font-semibold text-[#080808]">
+                    {item.guardrail}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Bloco B: Catálogo de especialistas em evolução (S7 / Roadmap) */}
+          <div className="mt-12">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="font-mono text-xs font-semibold tracking-wider text-[#52525B] uppercase">
+                CATÁLOGO DE ESPECIALISTAS EM EVOLUÇÃO (ETAPA S7 &amp; ROADMAP — NÃO PUBLICADOS EM PROD)
+              </p>
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {SPECIALIST_DOMAINS_CATALOG.map((spec) => (
+                <article
+                  key={spec.id}
+                  className={`rounded-2xl border-2 border-[#080808] p-5 ${
+                    spec.availability === "roadmap" ? "bg-[#F4F4F5]" : "bg-[#FFF9EC]/70"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="font-display text-lg leading-6 font-semibold text-[#080808]">
+                      {spec.name}
+                    </h3>
+                    <StatusDot status={spec.availability} showShort />
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-[#262626]">{spec.outcome}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Segunda mensagem obrigatória sobre skills */}
+          <div className="mt-10 rounded-2xl border-2 border-[#080808] bg-[#FDC616] px-6 py-5 shadow-[4px_4px_0_#080808]">
+            <p className="font-display text-center text-lg leading-7 font-semibold text-[#080808] sm:text-xl">
+              Os especialistas ganham novas capacidades com skills — sem trocar de assistente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          07 — WORKSPACES / SEUS CONTEXTOS (4 CONTEXTOS UNIFICADOS)
+      ====================================================================== */}
+      <section id="workspaces" className="bg-[#FFF9EC] border-t-2 border-[#080808] py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
               <div className="flex flex-wrap items-center gap-4">
                 <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-                  05 · WORKSPACES
+                  07 · WORKSPACES ISOLADOS
                 </p>
                 <StatusDot status="disponivel" />
               </div>
               <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-                Você tem vários mundos. O EuVerso entende isso.
+                Sua vida tem vários contextos. O EuVerso também.
               </h2>
               <p className="mt-4 text-base leading-7 text-[#262626]">
-                Separe vida pessoal, projetos próprios e empresa em workspaces isolados no servidor — cada um com seus dados, memória, permissões e chaves de IA.
+                Separe Pessoal, Trabalho, Projetos e Clientes em workspaces isolados no servidor — cada um com seus próprios dados, configurações, memória e permissões, sem vazamento entre espaços.
               </p>
             </div>
             <Link href="/workspaces" className="comic-btn-secondary">
@@ -335,9 +360,12 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {WORKSPACES_WORLDS.map((world) => (
-              <article key={world.id} className="comic-panel comic-panel-interactive flex flex-col justify-between p-6 sm:p-8">
+              <article
+                key={world.id}
+                className="comic-panel comic-panel-interactive flex flex-col justify-between p-6"
+              >
                 <div>
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-mono text-xs font-semibold tracking-wider text-[#52525B] uppercase">
@@ -349,18 +377,23 @@ export default function HomePage() {
                       aria-hidden="true"
                     >
                       <Layers
-                        className={`h-4 w-4 ${world.accent === "#7654E8" ? "text-[#FFFFFF]" : "text-[#080808]"}`}
+                        className={`h-4 w-4 ${
+                          world.accent === "#7654E8" ? "text-[#FFFFFF]" : "text-[#080808]"
+                        }`}
                       />
                     </span>
                   </div>
-                  <h3 className="font-display mt-4 text-2xl leading-8 font-semibold text-[#080808]">
+                  <h3 className="font-display mt-4 text-xl leading-7 font-semibold text-[#080808]">
                     {world.title}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-[#262626]">{world.description}</p>
                   <ul className="mt-5 space-y-2.5 border-t border-[#E4E4E7] pt-5">
                     {world.highlights.map((h) => (
-                      <li key={h} className="flex items-start gap-2.5 text-sm leading-5 text-[#080808]">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#080808]" aria-hidden="true" />
+                      <li key={h} className="flex items-start gap-2 text-sm leading-5 text-[#080808]">
+                        <CheckCircle2
+                          className="mt-0.5 h-4 w-4 shrink-0 text-[#080808]"
+                          aria-hidden="true"
+                        />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -373,132 +406,9 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================================
-          06 — AGENTES
+          08 — MEU DIA / DASHBOARD PESSOAL (PRÉVIA S7)
       ====================================================================== */}
-      <section id="agentes" className="bg-[#FFFFFF] border-t-2 border-[#080808] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <div className="max-w-2xl">
-              <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-                06 · AGENTES SUPERVISIONADOS
-              </p>
-              <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-                Não faça tudo sozinho. Trabalhe com agentes.
-              </h2>
-              <p className="mt-4 text-base leading-7 text-[#262626]">
-                Capacidades reais com limites explícitos. Cada agente declara o que pode consultar, o que exige sua aprovação e o que é proibido executar.
-              </p>
-            </div>
-            <Link href="/agentes-de-ia" className="comic-btn-secondary">
-              <span>Ver todos os agentes</span>
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {AGENTS_SHOWCASE.map((agent) => (
-              <article
-                key={agent.name}
-                className={`comic-panel flex flex-col justify-between p-6 ${
-                  agent.availability === "roadmap" ? "bg-[#F4F4F5]" : "bg-[#FFFFFF]"
-                }`}
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <StatusDot status={agent.availability} />
-                  </div>
-                  <h3 className="font-display mt-4 text-xl leading-7 font-semibold text-[#080808]">
-                    {agent.name}
-                  </h3>
-                  <p className="mt-1 font-mono text-xs font-semibold text-[#52525B] uppercase">
-                    {agent.role}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-[#262626]">{agent.description}</p>
-                </div>
-                <div className="mt-5 rounded-xl border border-[#080808]/20 bg-[#FFF9EC] p-3 text-xs leading-5 font-semibold text-[#080808]">
-                  Regra de controle: {agent.guardrail}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          07 — AUTOMAÇÕES (ILUSTRAÇÃO 03 + DA CONVERSA À EXECUÇÃO)
-      ====================================================================== */}
-      <section id="automacoes" className="bg-halftone-dark border-y-4 border-[#FDC616] py-20 text-[#FFFFFF] lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-6">
-              <div className="flex flex-wrap items-center gap-4">
-                <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#FDC616] uppercase">
-                  07 · AUTOMAÇÕES
-                </p>
-                <StatusDot status="em_validacao" onDark />
-              </div>
-              <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#FFFFFF] sm:text-4xl sm:leading-[44px]">
-                Da conversa à execução.
-              </h2>
-              <p className="mt-4 text-base leading-7 text-[#E4E4E7]">
-                Veja como uma solicitação comum se transforma em um processo estruturado, validado e supervisionado — sem caixas-pretas nem promessas irreais de autonomia ilimitada.
-              </p>
-
-              <ol className="mt-8 space-y-4">
-                {AUTOMATION_PIPELINE.map((item) => (
-                  <li
-                    key={item.step}
-                    className="flex items-start gap-4 rounded-2xl border border-[#2E2E32] bg-[#141414] p-4"
-                  >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-2 border-[#FFFFFF] bg-[#FDC616] font-mono text-xs font-semibold text-[#080808]">
-                      {item.step}
-                    </span>
-                    <div>
-                      <h3 className="font-display text-base leading-6 font-semibold text-[#FFFFFF]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-0.5 text-sm leading-5 text-[#D4D4D8]">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <WhatsAppButton
-                  origin="automacoes"
-                  label="Conhecer Automações no WhatsApp"
-                  variant="primary-on-dark"
-                  extraEvent="feature_click"
-                />
-                <Link href="/automacoes-com-ia" className="comic-btn-secondary-on-dark">
-                  <span>Ver arquitetura de automações</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Ilustração Oficial 03 — Automações e Conexões */}
-            <div className="lg:col-span-6">
-              <div className="overflow-hidden rounded-3xl border-3 border-[#FDC616] bg-[#080808] p-3 shadow-[8px_8px_0_#7654E8]">
-                <div className="overflow-hidden rounded-2xl">
-                  <ResponsiveIllustration
-                    variant="automacoes"
-                    sizes="(max-width: 1024px) 100vw, 48vw"
-                  />
-                </div>
-              </div>
-              <p className="mt-4 text-xs leading-5 text-[#D4D4D8]">
-                Plataforma de workflows S6 concluída em homologação controlada; consulte pelo WhatsApp a disponibilidade para a sua operação.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          08 — WORKFLOW STUDIO
-      ====================================================================== */}
-      <WorkflowStudioShowcase />
+      <MeuDiaPreviewSection />
 
       {/* =====================================================================
           09 — MISSION CONTROL
@@ -506,120 +416,7 @@ export default function HomePage() {
       <MissionControlShowcase />
 
       {/* =====================================================================
-          10 — FUNCIONALIDADES ADICIONAIS
-      ====================================================================== */}
-      <section id="funcionalidades-adicionais" className="bg-[#FFFFFF] border-t-2 border-[#080808] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <div className="max-w-2xl">
-              <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-                10 · ECOSSISTEMA COMPLETO
-              </p>
-              <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-                Tudo conectado no mesmo lugar — do dia a dia à governança.
-              </h2>
-            </div>
-            <Link href="/funcionalidades" className="comic-btn-secondary">
-              <span>Ver matriz completa de funcionalidades</span>
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {ADDITIONAL_FEATURES.map((feat) => {
-              const Icon = feat.icon;
-              return (
-                <Link
-                  key={feat.title}
-                  href={feat.href}
-                  className="comic-panel comic-panel-interactive group flex flex-col justify-between p-6"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="flex h-11 w-11 items-center justify-center rounded-xl border-2 border-[#080808] bg-[#FDC616]">
-                        <Icon className="h-5 w-5 text-[#080808]" aria-hidden="true" />
-                      </span>
-                      <StatusDot status={feat.status} showShort />
-                    </div>
-                    <h3 className="font-display mt-4 text-xl leading-7 font-semibold text-[#080808]">
-                      {feat.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-[#262626]">{feat.text}</p>
-                  </div>
-                  <p className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#080808] group-hover:underline">
-                    <span>Explorar detalhes</span>
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </p>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          11 — PARA QUEM É
-      ====================================================================== */}
-      <section id="para-quem-e" className="bg-halftone-cream border-t-2 border-[#080808] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-              11 · PARA QUEM É
-            </p>
-            <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-              Comece no seu ritmo — do pessoal à operação em equipe.
-            </h2>
-          </div>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {AUDIENCES.map((aud) => (
-              <article key={aud.id} className="comic-panel flex flex-col justify-between p-6 sm:p-8">
-                <div>
-                  <div
-                    className="mb-4 inline-block rounded-lg border-2 border-[#080808] px-3 py-1 font-mono text-xs font-semibold uppercase"
-                    style={{
-                      backgroundColor: aud.accent,
-                      color: aud.accent === "#7654E8" ? "#FFFFFF" : "#080808",
-                    }}
-                  >
-                    {aud.eyebrow}
-                  </div>
-                  <h3 className="font-display text-2xl leading-8 font-semibold text-[#080808]">
-                    {aud.title}
-                  </h3>
-                  <ul className="mt-5 space-y-3">
-                    {aud.benefits.map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-sm leading-6 text-[#262626]">
-                        <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#080808]" aria-hidden="true" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-8 flex flex-col gap-3">
-                  <WhatsAppButton
-                    origin={aud.whatsappOrigin}
-                    label={aud.ctaLabel}
-                    variant="primary"
-                    className="w-full text-sm"
-                  />
-                  <Link
-                    href={aud.href}
-                    className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-semibold text-[#080808] underline underline-offset-4"
-                  >
-                    <span>Ver página dedicada</span>
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          12 — SEGURANÇA E CONTROLE
+          10 — SEGURANÇA E CONTROLE (SERÁ REFINADA EM W4)
       ====================================================================== */}
       <section id="seguranca" className="bg-[#080808] border-y-4 border-[#FDC616] py-20 text-[#FFFFFF] lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -665,33 +462,7 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================================
-          13 — PLANOS
-      ====================================================================== */}
-      <section id="planos" className="bg-[#FFFFFF] py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <div className="max-w-2xl">
-              <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
-                13 · PLANOS COMERCIAIS
-              </p>
-              <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
-                Quatro formatos pensados para cada momento da sua jornada.
-              </h2>
-            </div>
-            <Link href="/planos" className="comic-btn-secondary">
-              <span>Ver página completa de Planos</span>
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-
-          <div className="mt-10">
-            <PlansGrid showComparison />
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          14 — FAQ
+          11 — FAQ (SERÁ FUNDIDA COM CTA FINAL EM W4)
       ====================================================================== */}
       <section id="faq" className="bg-[#FFF9EC] border-t-2 border-[#080808] py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

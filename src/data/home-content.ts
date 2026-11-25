@@ -348,44 +348,141 @@ export const HOW_IT_WORKS_STEPS = [
 export const WORKSPACES_WORLDS = [
   {
     id: "pessoal",
-    eyebrow: "MUNDO PESSOAL",
-    title: "Casa, finanças e rotina leve",
+    eyebrow: "PESSOAL",
+    title: "Casa, finanças e rotina",
     accent: "#5BD8B6",
     description:
-      "Acompanhe compromissos, metas individuais, tarefas domésticas e controle financeiro sem misturar com clientes ou equipe.",
+      "Organize tarefas pessoais, metas e despesas da casa em um espaço privado, com memória editável e zero mistura com trabalho.",
     highlights: [
-      "Memória pessoal isolada e editável",
+      "Memória pessoal isolada e controlável",
       "Leitura clara de receitas, despesas e cartões",
-      "Pulse focado nas suas prioridades do dia",
+      "Configurações e prioridades só suas",
     ],
   },
   {
-    id: "profissional",
-    eyebrow: "MUNDO PROFISSIONAL",
-    title: "Projetos, clientes e entregas",
+    id: "trabalho",
+    eyebrow: "TRABALHO",
+    title: "Rotina profissional e entregas",
     accent: "#FDC616",
     description:
-      "Centralize demandas de clientes, cronogramas, ideias e automações de rotina com contexto próprio para cada frente de trabalho.",
+      "Separe compromissos do dia a dia profissional, documentos e prioridades sem contaminar seu espaço pessoal.",
     highlights: [
-      "Espaços dedicados por projeto ou operação",
-      "Apoio supervisionado para quebrar planos em tarefas",
-      "Cross-Workspace Context Bridge somente quando autorizado",
+      "Contexto profissional focado na semana",
+      "Tarefas e planos preparados sob aprovação",
+      "Sem fusão silenciosa com outros workspaces",
     ],
   },
   {
-    id: "empresarial",
-    eyebrow: "MUNDO EMPRESARIAL",
-    title: "Equipes, papéis e governança",
+    id: "projetos",
+    eyebrow: "PROJETOS",
+    title: "Iniciativas e automações",
+    accent: "#FF8169",
+    description:
+      "Estruture frentes independentes, lançamentos e fluxos recorrentes com histórico próprio e acompanhamento claro.",
+    highlights: [
+      "Espaço dedicado por iniciativa ou produto",
+      "Workflows com Dry-Run e aprovação humana",
+      "Trilha de decisões e evolução contínua",
+    ],
+  },
+  {
+    id: "clientes",
+    eyebrow: "CLIENTES & EQUIPES",
+    title: "Papéis, chaves e governança",
     accent: "#7654E8",
     description:
-      "Compartilhe processos, workflows e acompanhamentos com papéis bem definidos (Owner, Admin, Member e Viewer) e trilha de auditoria.",
+      "Opere com equipe ou contas de clientes usando papéis claros (Owner, Admin, Member e Viewer) e cofre de IA dedicado.",
     highlights: [
-      "RBAC validado no servidor por workspace",
-      "Cofre BYOK isolado por operação",
-      "Aprovações humanas antes de ações críticas",
+      "Isolamento validado no servidor por workspace",
+      "Permissões RBAC e auditoria por operação",
+      "Credenciais BYOK exclusivas do espaço",
     ],
   },
 ];
+
+export const ACTIVE_CAPABILITIES_SHOWCASE = [
+  {
+    name: "Financeiro (Leitura & Registro Supervisionado)",
+    availability: "disponivel" as const,
+    outcome: "Consulte receitas, despesas, cartões e faturas e prepare lançamentos sob aprovação.",
+    guardrail: "Sem movimentação bancária nem pagamento automático.",
+  },
+  {
+    name: "Projetos & Tarefas",
+    availability: "disponivel" as const,
+    outcome: "Transforme metas e pedidos em etapas, tarefas e prioridades organizadas no workspace.",
+    guardrail: "Toda gravação exige aprovação humana explícita.",
+  },
+  {
+    name: "Automações & Workflows (S6)",
+    availability: "disponivel" as const,
+    outcome: "Estruture rotinas recorrentes com validação prévia (Dry-Run) e acompanhamento no Mission Control.",
+    guardrail: "Certificado em piloto controlado; checkpoints humanos obrigatórios.",
+  },
+  {
+    name: "Skills (SKILL.md) & Ferramentas MCP",
+    availability: "disponivel_com_restricoes" as const,
+    outcome: "Amplie o alcance dos especialistas com habilidades inspecionadas e conectores controlados.",
+    guardrail: "Execução externa somente em ambiente isolado sob allowlist e aprovação.",
+  },
+] as const;
+
+export const SPECIALIST_DOMAINS_CATALOG = [
+  {
+    id: "email",
+    name: "E-mail",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Triar mensagens autorizadas, destacar prioridades e preparar rascunhos para revisão.",
+  },
+  {
+    id: "agenda",
+    name: "Agenda",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Verificar disponibilidade, proteger blocos de foco e sugerir horários sem conflitos.",
+  },
+  {
+    id: "financeiro-2",
+    name: "Financeiro 2.0",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Acompanhar competência, vencimentos e histórico revisável (sem movimentação bancária).",
+  },
+  {
+    id: "meu-dia",
+    name: "Meu Dia",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Reunir seu briefing diário com widgets autorizados de prioridades e rotina.",
+  },
+  {
+    id: "dev",
+    name: "Dev",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Apoiar análises técnicas e propostas de mudança em sandbox isolado (sem auto-merge).",
+  },
+  {
+    id: "tutor",
+    name: "Tutor de Estudos",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Organizar materiais enviados por você em planos de estudo, resumos e revisões.",
+  },
+  {
+    id: "gastronomia",
+    name: "Gastronomia",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Planejar cardápios, receitas e listas de compras respeitando preferências e alergias.",
+  },
+  {
+    id: "saude",
+    name: "Fitness e Saúde",
+    availability: "em_desenvolvimento" as const,
+    outcome: "Organizar hábitos e rotinas de bem-estar com privacidade reforçada (wearables no roadmap).",
+  },
+  {
+    id: "entretenimento",
+    name: "Cinema/Streaming & Futebol",
+    availability: "roadmap" as const,
+    outcome: "Acompanhar estreias, recomendações e jogos conforme integração de provedores planejados.",
+  },
+] as const;
 
 export const AGENTS_SHOWCASE = [
   {
