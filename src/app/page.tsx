@@ -282,16 +282,30 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================================
-          04 — DEMONSTRAÇÃO (TRANSITÓRIO W1 -> REFINADO EM W2)
+          04 — A DEMONSTRAÇÃO / DO PEDIDO AO RESULTADO
       ====================================================================== */}
       <section id="demonstracao" className="bg-[#FFFFFF] border-t-2 border-[#080808] py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <HeroInteractiveDemo />
+          <div className="max-w-3xl">
+            <p className="font-mono text-[13px] leading-4 font-semibold tracking-wider text-[#080808] uppercase">
+              04 · DO PEDIDO AO RESULTADO
+            </p>
+            <h2 className="font-display mt-3 text-3xl leading-10 font-semibold tracking-tight text-[#080808] sm:text-4xl sm:leading-[44px]">
+              Veja como uma conversa pode virar ação.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-[#262626]">
+              Compare uma resposta genérica de chat com um fluxo estruturado no EuVerso. Cada exemplo abaixo sinaliza honestamente o estágio atual do recurso na plataforma.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <HeroInteractiveDemo />
+          </div>
         </div>
       </section>
 
       {/* =====================================================================
-          04 — PULSE (ILUSTRAÇÃO 02 + CONVERSA CONTEXTUAL INTERATIVA)
+          05 — PULSE / COMO FUNCIONA SEM JARGÃO (+ PUV REPOSICIONADA)
       ====================================================================== */}
       <PulseDemoSection />
 
